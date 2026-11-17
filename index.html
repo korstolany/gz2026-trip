@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>廣州設計展行程</title>
+<style>
+:root{
+  --bg:#f4f3ef;--surface:#fff;--surface2:#f8f7f4;--border:#e6e3da;
+  --blue:#2a5490;--blue-bg:#ddeaf6;--blue-txt:#2a5490;
+  --orange:#c47c2a;--orange-bg:#fdf0de;--orange-txt:#c47c2a;
+  --green:#2b7345;--green-bg:#e3f4e9;--green-txt:#2b7345;
+  --red:#b03030;--red-bg:#fde8e8;--red-txt:#b03030;
+  --purple:#5e3fa0;--purple-bg:#ede7fc;--purple-txt:#5e3fa0;
+  --text:#1a1a1a;--text2:#5a5a5a;--text3:#999;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#1a1917;--surface:#242320;--surface2:#2b2a26;--border:#383530;
+  --blue:#6a9fd8;--blue-bg:#1d344f;--blue-txt:#8bbde8;
+  --orange:#e0a060;--orange-bg:#3d2a10;--orange-txt:#e0a060;
+  --green:#5ac882;--green-bg:#1a3528;--green-txt:#5ac882;
+  --red:#e06060;--red-bg:#3d1515;--red-txt:#e06060;
+  --purple:#b08de0;--purple-bg:#2a1f40;--purple-txt:#b08de0;
+  --text:#f0ede6;--text2:#a8a49c;--text3:#666;
+}}
+:root[data-theme=dark]{
+  --bg:#1a1917;--surface:#242320;--surface2:#2b2a26;--border:#383530;
+  --blue:#6a9fd8;--blue-bg:#1d344f;--blue-txt:#8bbde8;
+  --orange:#e0a060;--orange-bg:#3d2a10;--orange-txt:#e0a060;
+  --green:#5ac882;--green-bg:#1a3528;--green-txt:#5ac882;
+  --red:#e06060;--red-bg:#3d1515;--red-txt:#e06060;
+  --purple:#b08de0;--purple-bg:#2a1f40;--purple-txt:#b08de0;
+  --text:#f0ede6;--text2:#a8a49c;--text3:#666;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.65}
+.wrap{max-width:800px;margin:0 auto;padding:20px 14px 60px}
+.hdr{background:var(--blue);color:#fff;border-radius:16px;padding:26px 22px 22px;margin-bottom:22px}
+.hdr-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:5px}
+.hdr h1{font-size:24px;font-weight:900;line-height:1.2;margin-bottom:10px}
+.hdr-pills{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;opacity:.88}
+.pill{background:rgba(255,255,255,.18);border-radius:20px;padding:3px 10px}
+.sh{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);margin:26px 0 10px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+.b{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:16px;margin-right:4px}
+.b-blue{background:var(--blue-bg);color:var(--blue-txt)}
+.b-orange{background:var(--orange-bg);color:var(--orange-txt)}
+.b-green{background:var(--green-bg);color:var(--green-txt)}
+.b-red{background:var(--red-bg);color:var(--red-txt)}
+.b-purple{background:var(--purple-bg);color:var(--purple-txt)}
+.fl-wrap{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border)}
+.fl-wrap:last-child{border-bottom:none}
+.fl-time{font-size:20px;font-weight:800;min-width:52px}
+.fl-mid{flex:1;text-align:center}
+.fl-line{display:flex;align-items:center;gap:5px;justify-content:center;color:var(--blue);font-size:12px;margin-bottom:2px}
+.fl-dash{flex:1;height:1px;background:var(--border)}
+.fl-code{font-size:10px;color:var(--text2)}
+.fl-price{text-align:right;font-weight:700;color:var(--orange);font-size:13px;min-width:60px}
+.fl-fee{margin-top:10px;padding-top:10px;border-top:1px dashed var(--border)}
+.fl-fee-row{display:flex;justify-content:space-between;font-size:12px;padding:2px 0;color:var(--text2)}
+.fl-fee-row.total{font-weight:700;color:var(--text);font-size:14px;border-top:1px solid var(--border);margin-top:4px;padding-top:6px}
+.zone-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.zone-top{padding:14px 16px;border-bottom:1px solid var(--border)}
+.zone-title{font-size:14px;font-weight:800;margin:6px 0 4px}
+.zone-sub{font-size:12px;color:var(--text2)}
+.hall-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.hall-item{padding:10px 14px;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.hall-item:nth-child(2n){border-right:none}
+.hall-item:nth-last-child(-n+2){border-bottom:none}
+.hall-num{font-size:10px;font-weight:700;color:var(--text3);margin-bottom:3px}
+.hall-name{font-size:12px;font-weight:700;line-height:1.3}
+.hall-desc{font-size:11px;color:var(--text2);margin-top:2px}
+.ticket-box{background:var(--orange-bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+.ticket-title{font-size:13px;font-weight:800;color:var(--orange-txt);margin-bottom:10px}
+.ticket-row{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.07)}
+.ticket-row:last-child{border-bottom:none}
+.ticket-row .step{width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.ticket-row .content{flex:1;font-size:13px}
+.day{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:14px}
+.day-h{padding:13px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)}
+.day-num{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
+.day-title{font-size:15px;font-weight:800;flex:1}
+.day-date{font-size:11px;color:var(--text2);flex-shrink:0}
+.tl{padding:0 18px 14px}
+.ti{display:flex;gap:12px;padding:11px 0 0;position:relative}
+.ti:not(:last-child)::before{content:'';position:absolute;left:50px;top:28px;bottom:-4px;width:1px;background:var(--border)}
+.ti-time{min-width:38px;font-size:11px;font-weight:700;color:var(--blue);padding-top:3px;text-align:right}
+.ti-dot{width:9px;height:9px;border-radius:50%;background:var(--blue);margin-top:5px;flex-shrink:0;border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--blue)}
+.ti-dot.or{background:var(--orange);box-shadow:0 0 0 1.5px var(--orange)}
+.ti-dot.gr{background:var(--green);box-shadow:0 0 0 1.5px var(--green)}
+.ti-dot.pu{background:var(--purple);box-shadow:0 0 0 1.5px var(--purple)}
+.ti-dot.re{background:var(--red);box-shadow:0 0 0 1.5px var(--red)}
+.ti-body{flex:1;padding-bottom:3px}
+.ti-label{font-size:13px;font-weight:700;line-height:1.3}
+.ti-detail{font-size:12px;color:var(--text2);margin-top:2px;line-height:1.5}
+.ti-didi{display:inline-block;font-size:11px;font-weight:600;background:var(--orange-bg);color:var(--orange-txt);padding:1px 7px;border-radius:12px;margin-top:4px}
+.ti-train-opts{margin-top:6px;display:flex;flex-direction:column;gap:4px}
+.train-opt{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:7px 10px;font-size:12px}
+.train-opt-label{font-size:10px;font-weight:700;color:var(--text3);margin-bottom:2px}
+.rest-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.rest-tab{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;cursor:pointer}
+.rest-tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.rest-section{display:none}
+.rest-section.show{display:block}
+.rest-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.rest-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.rest-name{font-size:14px;font-weight:800}
+.rest-rating{font-size:12px;font-weight:700;color:var(--orange)}
+.rest-info-row{font-size:12px;color:var(--text2);display:flex;gap:6px;align-items:flex-start;margin:3px 0}
+.rest-dishes{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.dish-tag{background:var(--surface2);border:1px solid var(--border);border-radius:12px;font-size:11px;padding:2px 8px}
+.rest-didi{font-size:11px;font-weight:600;color:var(--orange);margin-top:6px}
+.train-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:10px}
+.train-block-h{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--border);font-size:13px;font-weight:700}
+.train-route{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid var(--border)}
+.train-route:last-child{border-bottom:none}
+.train-t{font-size:17px;font-weight:800;min-width:50px}
+.train-mid{flex:1;text-align:center;font-size:11px;color:var(--text2)}
+.train-opt-badge{background:var(--blue-bg);color:var(--blue-txt);font-size:10px;font-weight:700;padding:2px 7px;border-radius:12px}
+.train-backup{background:var(--orange-bg);color:var(--orange-txt)}
+.cost-t{width:100%;border-collapse:collapse;font-size:13px}
+.cost-t td{padding:7px 4px;border-bottom:1px solid var(--border)}
+.cost-t tr:last-child td{border-bottom:none;font-weight:800;font-size:15px}
+.cost-t td:last-child{text-align:right}
+.cost-sub{font-size:11px;color:var(--text2)}
+.tips{background:var(--red-bg);border-radius:12px;padding:14px 16px;margin-top:4px}
+.tips-t{font-size:12px;font-weight:700;color:var(--red-txt);margin-bottom:8px}
+.tips-l{list-style:none}
+.tips-l li{font-size:12px;padding:3px 0;display:flex;gap:7px}
+.tips-l li::before{content:'⚠';flex-shrink:0;font-size:11px}
+.walk{display:inline-block;font-size:11px;font-weight:600;color:var(--green-txt);background:var(--green-bg);padding:1px 7px;border-radius:10px;margin-top:4px}
+@media(min-width:520px){
+  .hall-grid{grid-template-columns:1fr 1fr 1fr}
+  .hall-item:nth-child(2n){border-right:1px solid var(--border)}
+  .hall-item:nth-child(3n){border-right:none}
+  .hall-item:nth-last-child(-n+3){border-bottom:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hdr">
+  <div class="hdr-label">行程規劃 · 3 人同行</div>
+  <h1>廣州設計周 2026<br>台中 → 香港 → 廣州</h1>
+  <div class="hdr-pills">
+    <span class="pill">📅 12/4（五）– 12/8（二）</span>
+    <span class="pill">👥 3 大人</span>
+    <span class="pill">✈️ UO173 / UO182</span>
+    <span class="pill">🚄 西九龍 → 廣州東</span>
+    <span class="pill">🎨 設計周 12/4–12/8</span>
+  </div>
+</div>
+
+<div class="sh">✈️ 機票明細（3 人 / 含稅）</div>
+<div class="card">
+  <div class="fl-wrap">
+    <div><div class="fl-time">13:10</div><div style="font-size:11px;color:var(--text2)">台中 RMQ</div></div>
+    <div class="fl-mid">
+      <div class="fl-line"><div class="fl-dash"></div><span>✈ 1h 50m</span><div class="fl-dash"></div></div>
+      <div class="fl-code">UO173 · Fri, 4 Dec 2026</div>
+    </div>
+    <div style="text-align:right"><div class="fl-time">15:00</div><div style="font-size:11px;color:var(--text2)">香港 HKG T1</div></div>
+    <div class="fl-price">TWD<br>1,660<br><span style="font-size:10px;font-weight:400">/人</span></div>
+  </div>
+  <div class="fl-wrap">
+    <div><div class="fl-time">18:15</div><div style="font-size:11px;color:var(--text2)">香港 HKG T2</div></div>
+    <div class="fl-mid">
+      <div class="fl-line"><div class="fl-dash"></div><span>✈ 1h 35m</span><div class="fl-dash"></div></div>
+      <div class="fl-code">UO182 · Tue, 8 Dec 2026</div>
+    </div>
+    <div style="text-align:right"><div class="fl-time">19:50</div><div style="font-size:11px;color:var(--text2)">台中 RMQ</div></div>
+    <div class="fl-price">TWD<br>2,570<br><span style="font-size:10px;font-weight:400">/人</span></div>
+  </div>
+  <div class="fl-fee">
+    <div class="fl-fee-row"><span>出發 票價（3人）</span><span>3 × TWD 1,660 = TWD 4,980</span></div>
+    <div class="fl-fee-row"><span>出發 機場服務費 + 燃油</span><span>3 × (750+610) = TWD 4,080</span></div>
+    <div class="fl-fee-row"><span>回程 票價（3人）</span><span>3 × TWD 2,570 = TWD 7,710</span></div>
+    <div class="fl-fee-row"><span>回程 香港稅費 + 燃油</span><span>3 × (854+385+278+610) = TWD 6,381</span></div>
+    <div class="fl-fee-row total"><span>機票合計（3人含稅）</span><span>TWD 23,151</span></div>
+  </div>
+</div>
+
+<div class="sh">🏨 住宿推薦（4 晚，琶洲展館圈內）</div>
+<p style="font-size:12px;color:var(--text2);margin-bottom:10px">預算 TWD 3,000 ≈ CNY 650 / 晚。均在琶洲展館步行距離內，建議四晚住同一間。標有 👦 豆哥推薦 為朋友親身推薦。</p>
+
+<div class="card">
+  <div class="b b-blue">性價比高</div>
+  <div style="font-size:14px;font-weight:800;margin-top:8px">易成假日公寓（保利世貿博覽館店）</div>
+  <div style="font-size:12px;color:var(--blue);font-weight:600;margin:4px 0">📍 廣交會展館旁 260m，步行 4 分鐘</div>
+  <div style="font-size:13px;font-weight:700;color:var(--orange)">約 CNY 350–550 / 晚（≈ TWD 1,505–2,365）</div>
+  <div style="font-size:12px;color:var(--text2);margin-top:4px">設備齊全，部分附廚房，展期必須提前 1 個月以上訂房。</div>
+</div>
+<div class="card">
+  <div class="b b-purple">備選</div>
+  <div style="font-size:14px;font-weight:800;margin-top:8px">美致歡朋國際公寓（琶洲會展中心店）</div>
+  <div style="font-size:12px;color:var(--blue);font-weight:600;margin:4px 0">📍 中洲中心南塔，步行 12 分鐘 / 滴滴 CNY 12</div>
+  <div style="font-size:13px;font-weight:700;color:var(--orange)">約 CNY 500–700 / 晚（≈ TWD 2,150–3,010）</div>
+  <div style="font-size:12px;color:var(--text2);margin-top:4px">近地鐵8號線萬勝圍站，環境整潔，交通便利。</div>
+</div>
+
+<div class="card">
+  <div style="display:flex;gap:8px"><div class="b b-orange">👦 豆哥推薦</div></div>
+  <div style="font-size:14px;font-weight:800;margin-top:8px">廣州巨峰國際商務公寓（保利世貿中心店）</div>
+  <div style="font-size:12px;color:var(--blue);font-weight:600;margin:4px 0">📍 保利世貿博覽館旁，步行約 5 分鐘</div>
+  <div style="font-size:13px;font-weight:700;color:var(--orange)">約 CNY 400–600 / 晚（≈ TWD 1,720–2,580）</div>
+  <div style="font-size:12px;color:var(--text2);margin-top:4px">商務公寓設施完善，大床或雙床可選，展期間供應穩定。</div>
+</div>
+<div class="card">
+  <div style="display:flex;gap:8px"><div class="b b-orange">👦 豆哥推薦</div></div>
+  <div style="font-size:14px;font-weight:800;margin-top:8px">Prime 琶洲公寓酒店（Prime Pazhou Aparthotel）</div>
+  <div style="font-size:12px;color:var(--blue);font-weight:600;margin:4px 0">📍 琶洲展館圈內</div>
+  <div style="font-size:13px;font-weight:700;color:var(--orange)">約 CNY 500–800 / 晚（≈ TWD 2,150–3,440）</div>
+  <div style="font-size:12px;color:var(--text2);margin-top:4px">精品公寓酒店，環境整潔，位置便利，服務到位，適合展覽期間短住。</div>
+</div>
+<div class="card">
+  <div style="display:flex;gap:8px"><div class="b b-orange">👦 豆哥推薦</div></div>
+  <div style="font-size:14px;font-weight:800;margin-top:8px">琶洲飯店（廣州塔琶洲會展店）</div>
+  <div style="font-size:12px;color:var(--blue);font-weight:600;margin:4px 0">📍 琶洲會展中心，廣州塔景觀旁</div>
+  <div style="font-size:13px;font-weight:700;color:var(--orange)">約 CNY 400–650 / 晚（≈ TWD 1,720–2,795）</div>
+  <div style="font-size:12px;color:var(--text2);margin-top:4px">傳統酒店設施，廣州塔夜景加持，早餐服務完善，出行方便。</div>
+</div>
+<div class="card">
+  <div style="display:flex;gap:8px"><div class="b b-orange">👦 豆哥推薦</div></div>
+  <div style="font-size:14px;font-weight:800;margin-top:8px">巴塞精品行政公寓（Basemon Executive Apartment）</div>
+  <div style="font-size:12px;color:var(--blue);font-weight:600;margin:4px 0">📍 磨碟沙地鐵站 B 出口旁 ｜ 廣交會期間提供免費接駁巴士至展館</div>
+  <div style="font-size:13px;font-weight:700;color:var(--orange)">約 CNY 300–500 / 晚（≈ TWD 1,290–2,150）</div>
+  <div style="font-size:12px;color:var(--text2);margin-top:4px">緊鄰地鐵站交通最方便，Canton Fair 展期免費巴士直達展館，CP值最高。</div>
+</div>
+
+<div class="sh">🎨 展館詳細分區 · 廣州設計周 2026</div>
+<div class="card" style="margin-bottom:10px">
+  <div style="font-size:14px;font-weight:800">展期：2026 年 12 月 4 日（五）– 12 月 8 日（二）</div>
+  <div style="font-size:12px;color:var(--text2);margin-top:4px">📍 廣州市海珠區琶洲 ｜ 三館聯動 ｜ 保利館5天 / 國採館＋海珠館4天（12/5–12/8）</div>
+  <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px">
+    <span class="b b-blue">保利世貿博覽館</span>
+    <span class="b b-orange">廣交會展館 C 區（國採館）</span>
+    <span class="b b-purple">海珠國際會展中心</span>
+  </div>
+</div>
+
+<div class="zone-card" style="margin-bottom:10px">
+  <div class="zone-top" style="background:var(--blue-bg)">
+    <div class="b b-blue">主展館 A · 保利世貿博覽館</div>
+    <div class="zone-title">高定 × 材料美學</div>
+    <div class="zone-sub">📍 海珠區新港東路1000號 ｜ 地鐵8號線琶洲站C/A出口，步行8分鐘<br>🕗 09:00–18:00 ｜ 共4層9個展廳 ｜ 展覽面積最大，建議單日專攻</div>
+  </div>
+  <div class="hall-grid">
+    <div class="hall-item"><div class="hall-num">3F · 5號館</div><div class="hall-name">門牆天地面材展區</div><div class="hall-desc">地板、牆面、天花材料，石材、瓷磚大牌齊聚</div></div>
+    <div class="hall-item"><div class="hall-num">3F · 6號館</div><div class="hall-name">藝術塗裝 / 新材展區</div><div class="hall-desc">創新塗裝工藝、藝術漆、新型建材發表</div></div>
+    <div class="hall-item"><div class="hall-num">3F · 9號館</div><div class="hall-name">智裝風水電氣館</div><div class="hall-desc">空調、新風、供暖、智能家居全整合系統</div></div>
+    <div class="hall-item"><div class="hall-num">2F · 3號館</div><div class="hall-name">入戶安防門窗展區</div><div class="hall-desc">安全門、窗系統、戶外入口大牌品牌</div></div>
+    <div class="hall-item"><div class="hall-num">2F · 4號館</div><div class="hall-name">高定門窗五金展區</div><div class="hall-desc">五金配件、鋁合金窗系統、高端定制</div></div>
+    <div class="hall-item"><div class="hall-num">2F · 8號館</div><div class="hall-name">高定家居美學館</div><div class="hall-desc">廚衛整裝、全屋定制、高端家居品牌展廳</div></div>
+    <div class="hall-item"><div class="hall-num">1F · 1號館</div><div class="hall-name">全案整裝解決方案</div><div class="hall-desc">知名裝修品牌、設計師合作展廳，全案展示</div></div>
+    <div class="hall-item"><div class="hall-num">1F · 2號館</div><div class="hall-name">健康家居精品廊</div><div class="hall-desc">健康建材選材主題策展、石材物料特展</div></div>
+    <div class="hall-item" style="border-right:none"><div class="hall-num">B1F · 7號館</div><div class="hall-name">酒店 × 新商業空間</div><div class="hall-desc">酒店空間材藝館、商業設計精品</div></div>
+  </div>
+  <div style="padding:10px 14px;font-size:12px;color:var(--text2);border-top:1px solid var(--border)">💡 動線建議：先從 3F（5、6、9館）→ 2F（4、8館）→ 1F（1、2館）→ B1F（7館），避免重複走樓梯</div>
+</div>
+
+<div class="zone-card" style="margin-bottom:10px">
+  <div class="zone-top" style="background:var(--orange-bg)">
+    <div class="b b-orange">主展館 B · 廣交會展館 C 區（國採館）</div>
+    <div class="zone-title">軟裝 × 生活美學</div>
+    <div class="zone-sub">📍 琶洲島新港東路，與保利館相鄰，步行 5–8 分鐘可達<br>🕗 09:30–17:30 ｜ 展期 12/5–12/8 ｜ 建議搭配保利館同天逛</div>
+  </div>
+  <div class="hall-grid">
+    <div class="hall-item"><div class="hall-num">展區 1</div><div class="hall-name">全屋家具展區</div><div class="hall-desc">客廳、臥室、辦公家具，大牌家具商齊聚</div></div>
+    <div class="hall-item"><div class="hall-num">展區 2</div><div class="hall-name">軟裝燈光展區</div><div class="hall-desc">室內燈具設計、氛圍燈、商業照明解決方案</div></div>
+    <div class="hall-item"><div class="hall-num">展區 3</div><div class="hall-name">家居用品展區</div><div class="hall-desc">生活家居美學選品、布藝窗簾、居家飾品</div></div>
+    <div class="hall-item"><div class="hall-num">特展</div><div class="hall-name">設計師品牌精選</div><div class="hall-desc">設計周合作品牌聯展，新銳設計師首發作品</div></div>
+  </div>
+  <div style="padding:10px 14px;font-size:12px;color:var(--text2);border-top:1px solid var(--border)">💡 保利館→廣交會C區 步行約 5–8 分鐘，建議午後移步，節省來回時間</div>
+</div>
+
+<div class="zone-card" style="margin-bottom:10px">
+  <div class="zone-top" style="background:var(--purple-bg)">
+    <div class="b b-purple">主展館 C · 海珠國際會展中心</div>
+    <div class="zone-title">戶外 × 奢品美學</div>
+    <div class="zone-sub">📍 琶洲，地鐵8號線琶洲站步行10分鐘<br>🕗 09:30–17:30 ｜ 展期 12/5–12/8 ｜ 規模略小，建議半天即可</div>
+  </div>
+  <div class="hall-grid">
+    <div class="hall-item"><div class="hall-num">展區 1</div><div class="hall-name">戶外花園庭院</div><div class="hall-desc">景觀設計、戶外鋪裝、庭院設計材料</div></div>
+    <div class="hall-item"><div class="hall-num">展區 2</div><div class="hall-name">豪宅御用家居</div><div class="hall-desc">收藏級設計精品、頂奢家具品牌</div></div>
+    <div class="hall-item"><div class="hall-num">展區 3</div><div class="hall-name">高端藝術品</div><div class="hall-desc">藝術品、古董、珠寶設計與家居融合</div></div>
+    <div class="hall-item"><div class="hall-num">特展</div><div class="hall-name">精造工法技藝展</div><div class="hall-desc">精做施工工藝、特殊材質應用展示</div></div>
+  </div>
+  <div style="padding:10px 14px;font-size:12px;color:var(--text2);border-top:1px solid var(--border)">💡 三館位於琶洲一線，保利→廣交C區→海珠館依次步行可達，建議按此順序逛完一天主場館</div>
+</div>
+
+<div class="sh">🎫 門票購買方式</div>
+<div class="ticket-box">
+  <div class="ticket-title">🎟 廣州設計周 2026 購票步驟</div>
+  <div class="ticket-row"><div class="step">1</div><div class="content"><strong>搜尋「廣州設計周」官方微信公眾號</strong><br>或直接開啟官網 gzdesignweek.com，點選「觀展購票」</div></div>
+  <div class="ticket-row"><div class="step">2</div><div class="content"><strong>選擇票種</strong>：三館通票（保利館＋國採館＋海珠館）｜ VIP超級買家全通票（含特展）</div></div>
+  <div class="ticket-row"><div class="step">3</div><div class="content"><strong>完成個人資料填寫</strong>（護照姓名 / 手機號）→ 選擇日期與人數 → 付款（支付寶 / 微信支付）</div></div>
+  <div class="ticket-row"><div class="step">4</div><div class="content"><strong>展前一週激活門票</strong>，入場當天出示手機二維碼即可；VIP票為實體票，組委會郵寄。</div></div>
+  <div class="ticket-row"><div class="step">5</div><div class="content"><strong>早鳥優惠</strong>：官方通常提前 2–3 個月開放「早鳥三館全通票」八折優惠，提早購買可省費用</div></div>
+</div>
+<div style="font-size:12px;color:var(--text2);margin-bottom:14px">⚠️ 2026年票價未公布，建議隨時關注官方微信號「廣州設計周」獲取最新票價與開票資訊。另可在聚展網（jufair.com）第三方購票。</div>
+
+<div class="sh">📋 完整行程（含精確時間）</div>
+
+<div class="day">
+  <div class="day-h"><div class="day-num">Day 1</div><div class="day-title">出發日 · 台中→香港→廣州</div><div class="day-date">12/4（五）</div></div>
+  <div class="tl">
+    <div class="ti"><div class="ti-time">11:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">前往台中國際機場（RMQ）</div><div class="ti-detail">建議提前 2 小時到機場，完成報到 / 托運行李 / 安檢<br>🚗 台中市區→機場約 20–40 分鐘（視出發地而定）</div></div></div>
+    <div class="ti"><div class="ti-time">13:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">台中機場 Check-in 截止（UO173）</div><div class="ti-detail">香港快運通常截止登機前 60 分鐘關閉 Check-in 櫃台</div></div></div>
+    <div class="ti"><div class="ti-time">13:10</div><div class="ti-dot or"></div><div class="ti-body"><div class="ti-label">✈ 台中 RMQ 起飛（UO173）</div><div class="ti-detail">飛行時間 1h 50m</div></div></div>
+    <div class="ti"><div class="ti-time">15:00</div><div class="ti-dot or"></div><div class="ti-body"><div class="ti-label">抵達香港國際機場（HKG）T1</div><div class="ti-detail">入境香港（台灣護照免簽）→ 等待行李轉盤 → 通關<br>⏱ 預留 45–60 分鐘過關取行李</div></div></div>
+    <div class="ti"><div class="ti-time">16:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">機場快線（Airport Express）→ 香港站</div><div class="ti-detail">T1 步行至 AEL 站台約 6 分鐘 → 乘車 24 分鐘 → 香港站<br>票價：HKD 115 / 人</div><span class="walk">🚶 步行 6 分鐘到 AEL 站台</span></div></div>
+    <div class="ti"><div class="ti-time">16:30</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">香港站 → 步行至西九龍高鐵站</div><div class="ti-detail">兩站相距約 500m，步行 5–8 分鐘；有指示牌</div><span class="walk">🚶 步行 5–8 分鐘</span></div></div>
+    <div class="ti"><div class="ti-time">16:40</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">⚠️ 西九龍站「一地兩檢」（需同時持台胞證）</div><div class="ti-detail">西九龍為唯一一地兩檢站：站內同步完成 ①香港出境（憑台灣護照）＋ ②內地入境（憑台胞證）<br><strong>台灣護照無法單獨入境大陸，必須同時持有台胞證（台灣居民來往大陸通行證）</strong><br>⏱ 安檢 + 兩道出入境手續 預留 45 分鐘，高峰期 60 分鐘</div></div></div>
+    <div class="ti"><div class="ti-time">17:30</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">🚄 高鐵：西九龍 → 廣州東</div><div class="ti-detail">二等座 HKD 247（約 TWD 1,070）/ 人</div><div class="ti-train-opts"><div class="train-opt"><div class="train-opt-label">🟢 首選班次</div><strong>17:30 出發</strong> → 廣州東 19:06–19:20 抵達（車程 約 96–110 分鐘）</div><div class="train-opt"><div class="train-opt-label">🟡 備選班次（若誤點）</div><strong>18:00 出發</strong> → 廣州東 19:36–19:50 抵達</div></div><div class="ti-detail" style="margin-top:4px">⚠️ 請提前在 12306.cn 或 Trip.com 購票，設計周期間票位緊張</div></div></div>
+    <div class="ti"><div class="ti-time">19:20</div><div class="ti-dot or"></div><div class="ti-body"><div class="ti-label">抵達廣州東站 → 滴滴打車至琶洲飯店</div><div class="ti-detail">廣州東站出站 → 開啟滴滴 App → 叫車至飯店<br>路程：約 12–15 km / 20–30 分鐘</div><span class="ti-didi">🚕 滴滴快車 CNY 28–38（約 TWD 120–165）</span></div></div>
+    <div class="ti"><div class="ti-time">20:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">辦理入住 Check-in</div><div class="ti-detail">放置行李，換舒適衣物休息片刻</div></div></div>
+    <div class="ti"><div class="ti-time">20:30</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">晚餐（詳見餐廳推薦 → Day 1 晚餐）</div><div class="ti-detail">第一頓廣州菜！建議選步行可達的琶洲在地餐廳</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-h"><div class="day-num">Day 2</div><div class="day-title">設計周 · 保利館 A 全日攻略</div><div class="day-date">12/5（六）設計周首日</div></div>
+  <div class="tl">
+    <div class="ti"><div class="ti-time">08:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">早餐（詳見餐廳推薦 → 早餐）</div><div class="ti-detail">廣州早茶文化！找一家茶樓吃個悠閒早點，約 60–75 分鐘</div></div></div>
+    <div class="ti"><div class="ti-time">09:15</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">步行至保利世貿博覽館</div><div class="ti-detail">從瑞泊灣公寓步行約 3 分鐘；開館前 15 分鐘到場排隊</div><span class="walk">🚶 步行 3 分鐘</span></div></div>
+    <div class="ti"><div class="ti-time">09:30</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">📍 保利館 3F 開始（5、6、9號館）</div><div class="ti-detail">門牆天地面材 + 藝術塗裝 + 智裝系統<br>建議由 5號館→6號館→9號館，約 2.5 小時</div></div></div>
+    <div class="ti"><div class="ti-time">12:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">午餐（詳見餐廳推薦 → 午餐）</div><div class="ti-detail">避開 12:00–13:00 展館內人潮高峰，建議先出去吃</div></div></div>
+    <div class="ti"><div class="ti-time">13:30</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">📍 保利館 2F（3、4、8號館）</div><div class="ti-detail">高定門窗 + 安防 + 高定家居美學館，約 2 小時</div></div></div>
+    <div class="ti"><div class="ti-time">15:30</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">📍 保利館 1F + B1F（1、2、7號館）</div><div class="ti-detail">全案整裝 + 健康精品廊 + 酒店商業空間，約 1.5 小時<br>B1F 7號館相對冷門，氛圍好，適合細看</div></div></div>
+    <div class="ti"><div class="ti-time">17:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">整理筆記 / 休息 / 返回飯店</div><div class="ti-detail">第一天逛完最大主館！回房補眠，換鞋，準備晚餐</div><span class="walk">🚶 步行 3–5 分鐘回飯店</span></div></div>
+    <div class="ti"><div class="ti-time">19:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">晚餐（詳見餐廳推薦 → Day 2 晚餐）</div><div class="ti-detail">第一頓正式廣州大餐，推薦米芝蓮或老字號</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-h"><div class="day-num">Day 3</div><div class="day-title">廣交會C區（國採館）＋ 海珠館</div><div class="day-date">12/6（日）</div></div>
+  <div class="tl">
+    <div class="ti"><div class="ti-time">08:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">早餐</div><div class="ti-detail">換一家茶樓，試試廣式腸粉、馬拉糕、鮮蝦餃</div></div></div>
+    <div class="ti"><div class="ti-time">09:20</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">步行至廣交會展館 C 區（國採館）</div><div class="ti-detail">從飯店步行，與保利館相鄰，約 8–12 分鐘</div><span class="walk">🚶 步行 8–12 分鐘</span></div></div>
+    <div class="ti"><div class="ti-time">09:30</div><div class="ti-dot or"></div><div class="ti-body"><div class="ti-label">📍 廣交會C區（國採館）</div><div class="ti-detail">軟裝 ✦ 燈光 ✦ 家具 ✦ 生活美學 ｜ 設計師品牌精選<br>預計逛 2.5–3 小時</div></div></div>
+    <div class="ti"><div class="ti-time">12:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">午餐</div><div class="ti-detail">可在廣交會館內餐廳，或步行至琶洲附近餐廳</div></div></div>
+    <div class="ti"><div class="ti-time">13:30</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">步行 / 滴滴至海珠國際會展中心</div><div class="ti-detail">從廣交會C區步行約 10 分鐘；或滴滴 CNY 12</div><span class="walk">🚶 步行 10 分鐘</span><span class="ti-didi" style="margin-left:6px">🚕 或滴滴 CNY 12</span></div></div>
+    <div class="ti"><div class="ti-time">14:00</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">📍 海珠國際會展中心</div><div class="ti-detail">戶外庭院設計 ✦ 豪宅家居 ✦ 高端藝術品 ✦ 精造工法<br>預計逛 2 小時</div></div></div>
+    <div class="ti"><div class="ti-time">16:00</div><div class="ti-dot or"></div><div class="ti-body"><div class="ti-label">沙面島下午遊（設計展特色分會場）</div><div class="ti-detail">百年歐式建築群 ✦ 咖啡館 ✦ 下午茶<br>設計周分會場，有展覽藝術裝置</div><span class="ti-didi">🚕 滴滴至沙面 CNY 25–32（約 25 分鐘）</span></div></div>
+    <div class="ti"><div class="ti-time">18:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">滴滴返回飯店 / 附近走走</div><span class="ti-didi">🚕 沙面→琶洲 CNY 25–32</span></div></div>
+    <div class="ti"><div class="ti-time">19:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">晚餐（詳見餐廳推薦 → Day 3 晚餐）</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-h"><div class="day-num">Day 4</div><div class="day-title">補看展 ＋ 廣州老城掃貨</div><div class="day-date">12/7（一）</div></div>
+  <div class="tl">
+    <div class="ti"><div class="ti-time">08:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">早餐</div></div></div>
+    <div class="ti"><div class="ti-time">09:30</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">📍 補看漏掉的展廳（三館任選）</div><div class="ti-detail">重點回看昨天沒拍夠的品牌展廳，或確認採購清單</div></div></div>
+    <div class="ti"><div class="ti-time">12:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">午餐</div></div></div>
+    <div class="ti"><div class="ti-time">14:00</div><div class="ti-dot or"></div><div class="ti-body"><div class="ti-label">北京路步行街 / 上下九 購物掃貨</div><div class="ti-detail">廣州手信、廣式零食、伴手禮<br>上下九有百年騎樓老街，逛街拍照一條龍</div><span class="ti-didi">🚕 琶洲→北京路 CNY 22–28（約 20 分鐘）</span></div></div>
+    <div class="ti"><div class="ti-time">17:30</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">返回飯店 / 整理收穫 / 準備明天退房行李</div><span class="ti-didi">🚕 北京路→琶洲 CNY 22–28</span></div></div>
+    <div class="ti"><div class="ti-time">19:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">最後晚餐 · 廣州收官之夜（詳見餐廳推薦 → 最後晚餐）</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-h"><div class="day-num">Day 5</div><div class="day-title">設計周最後 ✈ 返回台中</div><div class="day-date">12/8（二）⚠️ 趕高鐵日</div></div>
+  <div class="tl">
+    <div class="ti"><div class="ti-time">08:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">早餐（快速，建議 45 分鐘內完成）</div></div></div>
+    <div class="ti"><div class="ti-time">09:00</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">📍 設計周最後巡禮（保利館最後開幕日）</div><div class="ti-detail">補看想再確認的品牌展廳，可在展館內購買設計師作品帶回台灣<br>⚠️ 注意行李空間！</div></div></div>
+    <div class="ti"><div class="ti-time">11:30</div><div class="ti-dot re"></div><div class="ti-body"><div class="ti-label">⚠️ 離展 · 返回飯店退房</div><div class="ti-detail">整理行李，完成退房（Check-out 通常 12:00 前），可存放行李</div><span class="walk">🚶 步行 3–5 分鐘回飯店</span></div></div>
+    <div class="ti"><div class="ti-time">12:00</div><div class="ti-dot re"></div><div class="ti-body"><div class="ti-label">⚠️ 叫滴滴前往廣州東站</div><div class="ti-detail">需 20–30 分鐘車程，建議提早叫車，展期末日路況較擁擠</div><span class="ti-didi">🚕 琶洲→廣州東 CNY 28–38（約 25–35 分鐘）</span></div></div>
+    <div class="ti"><div class="ti-time">12:35</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">廣州東站 大陸安檢 + 內地出境（非一地兩檢）</div><div class="ti-detail">廣州東無一地兩檢：只辦理 大陸安檢 + 內地出境（憑台胞證）<br>⚠️ 香港入境需抵達西九龍站後才辦理（憑台灣護照），不在廣州東辦<br>⏱ 安檢 + 內地出境 預留 30–40 分鐘，建議 12:35 前到達</div></div></div>
+    <div class="ti"><div class="ti-time">13:20</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">🚄 高鐵：廣州東 → 西九龍</div><div class="ti-detail">二等座 HKD 247 / 人</div><div class="ti-train-opts"><div class="train-opt"><div class="train-opt-label">🟢 首選班次</div><strong>13:20 出發</strong> → 西九龍 14:56–15:10 抵達（車程 96–110 分鐘）</div><div class="train-opt"><div class="train-opt-label">🟡 備選班次（若趕不上）</div><strong>14:00 出發</strong> → 西九龍 15:36–15:50 抵達（仍有足夠時間）</div></div></div></div>
+    <div class="ti"><div class="ti-time">15:10</div><div class="ti-dot or"></div><div class="ti-body"><div class="ti-label">抵達西九龍站 → 辦理香港入境 → 步行至香港站</div><div class="ti-detail">先辦理香港入境（憑台灣護照）→ 出站 → 步行 500m 至 AEL 香港站<br>⏱ 香港入境 + 步行 合計 15–20 分鐘</div><span class="walk">🚶 步行 5–8 分鐘到 AEL 香港站</span></div></div>
+    <div class="ti"><div class="ti-time">15:20</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">機場快線（Airport Express）→ 香港機場</div><div class="ti-detail">香港站 → HKG T2 ：約 24 分鐘 / HKD 115 人<br>約 15:44 抵達機場</div></div></div>
+    <div class="ti"><div class="ti-time">15:50</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">HKG T2 · 辦理 Check-in（UO182）</div><div class="ti-detail">香港快運 Check-in 截止：飛機起飛前 60 分鐘（約 17:15）<br>⏱ Check-in + 托運 + 安檢 + 出境預留 90 分鐘</div></div></div>
+    <div class="ti"><div class="ti-time">18:15</div><div class="ti-dot or"></div><div class="ti-body"><div class="ti-label">✈ HKG 起飛（UO182）→ 台中</div><div class="ti-detail">飛行 1h 35m</div></div></div>
+    <div class="ti"><div class="ti-time">19:50</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">🎉 台中機場 RMQ 抵達！</div><div class="ti-detail">滿載設計靈感 × 廣州手信平安回家</div></div></div>
+  </div>
+</div>
+
+<div class="sh">🍜 餐廳推薦（每餐 3 選）</div>
+<div class="rest-tabs">
+  <div class="rest-tab active" onclick="showMeal('breakfast')">🌅 早餐</div>
+  <div class="rest-tab" onclick="showMeal('lunch')">☀️ 午餐</div>
+  <div class="rest-tab" onclick="showMeal('d1dinner')">🌙 Day1晚餐</div>
+  <div class="rest-tab" onclick="showMeal('d2dinner')">🌙 Day2晚餐</div>
+  <div class="rest-tab" onclick="showMeal('d3dinner')">🌙 Day3晚餐</div>
+  <div class="rest-tab" onclick="showMeal('d4dinner')">🌙 最後晚餐</div>
+</div>
+
+<div id="breakfast" class="rest-section show">
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">點都德（琶洲 / 海珠分店）</div><div class="rest-rating">⭐ 4.5 / 5</div></div><div class="rest-info-row">📍 多間分店，以「點都德新港東路店」為例，步行 10 分鐘</div><div class="rest-info-row">📞 大眾點評搜尋「點都德」選最近分店</div><div class="rest-info-row">🕗 06:30–14:30 ｜ 人均 CNY 60–90</div><div class="rest-info-row">📝 廣州知名連鎖茶樓，蝦餃、燒賣、腸粉、流沙包水準穩定，不用訂位，現場取號</div><div class="rest-dishes"><span class="dish-tag">蝦餃皇</span><span class="dish-tag">蘿蔔牛腩腸粉</span><span class="dish-tag">流沙包</span><span class="dish-tag">叉燒酥</span></div><div class="rest-didi">🚕 步行 10 分鐘，或滴滴 CNY 12</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">林師傅布拉腸粉（海珠中路店）</div><div class="rest-rating">⭐ 4.3 / 5</div></div><div class="rest-info-row">📍 海珠中路，距琶洲滴滴約 15 分鐘</div><div class="rest-info-row">📞 大眾點評搜尋「林師傅布拉腸粉」</div><div class="rest-info-row">🕗 07:00–15:00 ｜ 人均 CNY 25–45</div><div class="rest-info-row">📝 廣州本地人愛的腸粉早餐，現做現吃，皮薄滑嫩，澆上特製醬汁。平價接地氣。</div><div class="rest-dishes"><span class="dish-tag">鮮蝦腸粉</span><span class="dish-tag">牛肉腸粉</span><span class="dish-tag">雙拼腸粉</span></div><div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">琪琪小食店（海珠中路店）</div><div class="rest-rating">⭐ 4.1 / 5</div></div><div class="rest-info-row">📍 海珠中路附近，滴滴約 15 分鐘</div><div class="rest-info-row">🕗 07:30–21:00 ｜ 人均 CNY 20–40</div><div class="rest-info-row">📝 廣州本地小食、煲仔飯老店，早午兩餐皆宜，18 位 Trip.com 旅客評分 4.1/5</div><div class="rest-dishes"><span class="dish-tag">煲仔飯</span><span class="dish-tag">廣式粥品</span><span class="dish-tag">小炒</span></div><div class="rest-didi">🚕 滴滴 CNY 18–26</div></div>
+</div>
+
+<div id="lunch" class="rest-section">
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">廣州大排檔 · 粵菜江景餐廳（琶醍店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div><div class="rest-info-row">📍 磨碟沙大街118號 珠江琶醍 C 區 4 樓</div><div class="rest-info-row">📞 020-89181788</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 70–120（≈ TWD 300–520）</div><div class="rest-info-row">📝 琶洲最知名江景餐廳，露台直望珠江，廣式粵菜水準穩定，大眾點評廣州菜熱門榜常客。建議 11:30 前到，否則排隊</div><div class="rest-dishes"><span class="dish-tag">白切雞</span><span class="dish-tag">清蒸魚</span><span class="dish-tag">廣式燒臘</span><span class="dish-tag">蒸蝦</span></div><div class="rest-didi">🚕 步行 8–10 分鐘（從保利館）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">傳記潮發牛肉店（琶洲保利店）</div><div class="rest-rating">⭐ 4.3 / 5</div></div><div class="rest-info-row">📍 新港東路琶洲新村暄悦西街 8 號（萬勝圍站 D 口步行 300m）</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div><div class="rest-info-row">📝 展館附近最近的優質餐廳之一，潮汕牛肉火鍋，肉新鮮、湯底濃鬱，受展商和設計師歡迎</div><div class="rest-dishes"><span class="dish-tag">吊龍肉片</span><span class="dish-tag">牛肉丸</span><span class="dish-tag">牛筋丸</span><span class="dish-tag">潮汕沙茶</span></div><div class="rest-didi">🚕 步行 5–8 分鐘（從保利館）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">躍 · Yue 現代粵菜料理</div><div class="rest-rating">⭐ 4.8 / 5</div></div><div class="rest-info-row">📍 新港東路618號 南豐滙 F4-F401（海珠館樓上）</div><div class="rest-info-row">🕗 11:30–14:30 / 17:30–22:00 ｜ 人均 CNY 150–250（≈ TWD 645–1,075）</div><div class="rest-info-row">📝 Trip.com 4.8/5，現代廣府菜創意出品，空間設計精緻，適合商務或犒賞自己。建議提前訂位。</div><div class="rest-dishes"><span class="dish-tag">創意粵式小炒</span><span class="dish-tag">煲湯</span><span class="dish-tag">精緻點心</span></div><div class="rest-didi">🚕 滴滴 CNY 12（從保利館，約 10 分鐘）</div></div>
+</div>
+
+<div id="d1dinner" class="rest-section">
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">新興家喻 · 品廚（海珠琶洲店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div><div class="rest-info-row">📍 美居北街83號 國美家 4 層</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div><div class="rest-info-row">📝 五代傳承粵式羊肉煲，到廣州必試，包間帶露台，環境舒適。第一天晚上吃個熱騰騰的廣東羊肉煲，暖胃又有特色</div><div class="rest-dishes"><span class="dish-tag">廣式羊肉煲</span><span class="dish-tag">南乳炆羊</span><span class="dish-tag">白灼菜心</span></div><div class="rest-didi">🚕 步行 10 分鐘（從保利館飯店）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">廣州大排檔 · 粵菜江景餐廳（琶醍店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div><div class="rest-info-row">📍 磨碟沙大街118號 珠江琶醍 C 區 4 樓</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 70–120（≈ TWD 300–520）</div><div class="rest-info-row">📝 夜晚珠江江景更美，到廣州第一晚看江景吃粵菜，感受廣州氛圍。建議 19:00 前到位。</div><div class="rest-dishes"><span class="dish-tag">白切雞</span><span class="dish-tag">蒸活魚</span><span class="dish-tag">廣式燒味</span></div><div class="rest-didi">🚕 步行 8 分鐘或滴滴 CNY 12</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">祿粥（海珠店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 海珠區杏園大街（地鐵2號線江南西站 B 出口）</div><div class="rest-info-row">🕗 09:00–24:00（營業到深夜）｜ 人均 CNY 60–100（≈ TWD 258–430）</div><div class="rest-info-row">📝 因明星光顧在小紅書爆紅的廣式粥店，招牌生劏水蟹粥鮮甜無比，米芝蓮推薦。第一晚深夜宵夜也可考慮</div><div class="rest-dishes"><span class="dish-tag">生劏水蟹粥</span><span class="dish-tag">煲仔粥</span><span class="dish-tag">潮式滷水</span></div><div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div></div>
+</div>
+
+<div id="d2dinner" class="rest-section">
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">惠食佳（濱江大公館店）</div><div class="rest-rating">⭐ 米芝蓮一星（連續6年）</div></div><div class="rest-info-row">📍 廣州市濱江西路172號（地鐵2號線鷺江站附近）</div><div class="rest-info-row">📞 020-34381188</div><div class="rest-info-row">🕗 11:00–16:00 / 17:00–22:30 ｜ 人均 CNY 100–160（≈ TWD 430–688）</div><div class="rest-info-row">📝 連續6年米芝蓮一星，以啫啫煲聞名廣州，不接受預約，建議 18:00 前到場取位，平日兩點仍爆滿</div><div class="rest-dishes"><span class="dish-tag">啫啫雞煲</span><span class="dish-tag">白灼蝦</span><span class="dish-tag">清蒸河鮮</span><span class="dish-tag">廣式小炒</span></div><div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">炳勝公館（珠江新城店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 天河區珠江新城冼村路2號5樓</div><div class="rest-info-row">📞 020-38035111</div><div class="rest-info-row">🕗 11:00–14:30 / 17:30–22:00 ｜ 人均 CNY 150–250（≈ TWD 645–1,075）</div><div class="rest-info-row">📝 廣州知名燒味名店，脆皮燒鵝皮脆肉嫩，以廣式高端家宴著稱，建議提前1–2天訂位</div><div class="rest-dishes"><span class="dish-tag">脆皮燒鵝</span><span class="dish-tag">叉燒拼盤</span><span class="dish-tag">煲湯</span><span class="dish-tag">蒸魚</span></div><div class="rest-didi">🚕 滴滴 CNY 20–30（約 20 分鐘）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">常來大排檔（老字號分店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦 · 大眾點評必吃榜</div></div><div class="rest-info-row">📍 大眾點評搜尋「常來大排檔」選最近分店</div><div class="rest-info-row">🕗 11:00–22:30 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div><div class="rest-info-row">📝 20年老字號，連續多年米芝蓮推薦，以荔枝木燒鵝、鮑魚瑤柱煲仔飯著稱，CP值極高的廣式大排檔</div><div class="rest-dishes"><span class="dish-tag">荔枝木燒鵝</span><span class="dish-tag">叉燒</span><span class="dish-tag">鮑魚瑤柱煲仔飯</span></div><div class="rest-didi">🚕 滴滴 CNY 20–30</div></div>
+</div>
+
+<div id="d3dinner" class="rest-section">
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">北園酒家（小北路店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 越秀區小北路202號</div><div class="rest-info-row">📞 020-83567688</div><div class="rest-info-row">🕗 11:00–14:30 / 17:00–22:00 ｜ 人均 CNY 102（≈ TWD 440）</div><div class="rest-info-row">📝 廣州歷史最悠久酒家之一，嶺南園林環境，傳統粵式點心與家宴菜式皆精緻，常見名人光顧，建議提前訂位</div><div class="rest-dishes"><span class="dish-tag">蝦餃皇</span><span class="dish-tag">古法蒸魚</span><span class="dish-tag">白雲豬手</span><span class="dish-tag">廣式點心</span></div><div class="rest-didi">🚕 滴滴 CNY 25–35（約 25 分鐘）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">祿粥（海珠店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 海珠區杏園大街（地鐵2號線江南西站 B 出口）</div><div class="rest-info-row">🕗 09:00–24:00 ｜ 人均 CNY 60–100（≈ TWD 258–430）</div><div class="rest-info-row">📝 下午在沙面玩完，晚上到海珠吃水蟹粥，路線自然。生劏水蟹極鮮，可提前電話查詢當日是否有蟹</div><div class="rest-dishes"><span class="dish-tag">生劏水蟹粥</span><span class="dish-tag">潮式雙拼</span><span class="dish-tag">宵夜小食</span></div><div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">惠食佳（東風大公館店）</div><div class="rest-rating">⭐ 米芝蓮一星</div></div><div class="rest-info-row">📍 越秀區東風東路（環市東）</div><div class="rest-info-row">📞 大眾點評搜尋「惠食佳東風大公館」</div><div class="rest-info-row">🕗 11:00–22:30 ｜ 人均 CNY 100–160（≈ TWD 430–688）</div><div class="rest-info-row">📝 惠食佳另一分店，不接受預約，與濱江大公館店同樣出品，環境更大</div><div class="rest-dishes"><span class="dish-tag">啫啫雞煲</span><span class="dish-tag">清炒時蔬</span><span class="dish-tag">廣式湯品</span></div><div class="rest-didi">🚕 滴滴 CNY 25–35</div></div>
+</div>
+
+<div id="d4dinner" class="rest-section">
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">炳勝公館（珠江新城店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 天河區珠江新城冼村路2號5樓</div><div class="rest-info-row">📞 020-38035111 ｜ 建議提前 1–2 天訂位</div><div class="rest-info-row">🕗 17:30–22:00 ｜ 人均 CNY 150–250（≈ TWD 645–1,075）</div><div class="rest-info-row">📝 最後一頓，好好犒勞自己！廣州最著名燒味名廚，脆皮燒鵝皮脆肉嫩，米芝蓮水準不踩雷</div><div class="rest-dishes"><span class="dish-tag">脆皮燒鵝</span><span class="dish-tag">叉燒皇</span><span class="dish-tag">煲湯</span><span class="dish-tag">煎釀豆腐</span></div><div class="rest-didi">🚕 滴滴 CNY 20–30（約 20 分鐘）</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">廣州大排檔 · 粵菜江景餐廳（琶醍店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div><div class="rest-info-row">📍 磨碟沙大街118號 珠江琶醍 C 區 4 樓</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 70–120（≈ TWD 300–520）</div><div class="rest-info-row">📝 最後晚餐回到琶洲，步行可達，江景配廣州菜，完美收尾。早點去佔江景位子</div><div class="rest-dishes"><span class="dish-tag">江景蒸魚</span><span class="dish-tag">白切雞</span><span class="dish-tag">廣式燒臘</span></div><div class="rest-didi">🚕 步行 8 分鐘</div></div>
+  <div class="rest-card"><div class="rest-top"><div class="rest-name">北園酒家（小北路店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 越秀區小北路202號</div><div class="rest-info-row">📞 020-83567688 ｜ 建議訂位</div><div class="rest-info-row">🕗 17:00–22:00 ｜ 人均 CNY 100（≈ TWD 430）</div><div class="rest-info-row">📝 嶺南園林夜景，傳統粵菜精緻又有歷史感，適合最後晚餐細品廣州滋味</div><div class="rest-dishes"><span class="dish-tag">古法蒸魚</span><span class="dish-tag">蝦餃皇</span><span class="dish-tag">廣式點心拼盤</span></div><div class="rest-didi">🚕 滴滴 CNY 25–35（約 25 分鐘）</div></div>
+</div>
+
+<div class="sh">🚄 高鐵班次參考 · 二等座</div>
+<div class="train-block">
+  <div class="train-block-h">🛫 去程 · 12/4（五）西九龍 → 廣州東</div>
+  <div class="train-route"><div><span class="train-opt-badge">首選</span><div class="train-t" style="margin-top:4px">17:30</div><div style="font-size:11px;color:var(--text2)">西九龍出發</div></div><div class="train-mid">──── ~96–110 分鐘 ────<br>二等座 HKD 247 / 人</div><div><div class="train-t" style="text-align:right">19:06~</div><div style="font-size:11px;color:var(--text2);text-align:right">廣州東抵達</div></div></div>
+  <div class="train-route"><div><span class="train-opt-badge train-backup">備選</span><div class="train-t" style="margin-top:4px">18:00</div><div style="font-size:11px;color:var(--text2)">西九龍出發</div></div><div class="train-mid">──── ~96–110 分鐘 ────<br>二等座 HKD 247 / 人</div><div><div class="train-t" style="text-align:right">19:36~</div><div style="font-size:11px;color:var(--text2);text-align:right">廣州東抵達</div></div></div>
+  <div style="padding:8px 14px;font-size:11px;color:var(--text2);border-top:1px solid var(--border)">⏱ 西九龍站需提前 45 分鐘到達辦理手續，高峰期建議 60 分鐘</div>
+</div>
+<div class="train-block">
+  <div class="train-block-h">🛬 回程 · 12/8（二）廣州東 → 西九龍</div>
+  <div class="train-route"><div><span class="train-opt-badge">首選</span><div class="train-t" style="margin-top:4px">13:20</div><div style="font-size:11px;color:var(--text2)">廣州東出發</div></div><div class="train-mid">──── ~96–110 分鐘 ────<br>二等座 HKD 247 / 人 / CNY 215</div><div><div class="train-t" style="text-align:right">14:56~</div><div style="font-size:11px;color:var(--text2);text-align:right">西九龍抵達</div></div></div>
+  <div class="train-route"><div><span class="train-opt-badge train-backup">備選</span><div class="train-t" style="margin-top:4px">14:00</div><div style="font-size:11px;color:var(--text2)">廣州東出發</div></div><div class="train-mid">──── ~96–110 分鐘 ────<br>二等座 HKD 247 / 人</div><div><div class="train-t" style="text-align:right">15:36~</div><div style="font-size:11px;color:var(--text2);text-align:right">西九龍抵達（仍趕得上）</div></div></div>
+  <div style="padding:8px 14px;font-size:11px;color:var(--text2);border-top:1px solid var(--border)">⚠️ 廣州東站需提前 45 分鐘到達，12/8 展覽最後一天旅客多，建議稍早出發<br>⚠️ 備選 14:00 班次：抵西九龍約 15:36 → AEL 24 分 → HKG 約 16:05 → 足夠辦理 18:15 航班（截止 17:15）</div>
+</div>
+
+<div class="sh">💰 費用概算（先算每人，再 × 3）</div>
+<div class="card">
+  <table class="cost-t">
+    <tr><td colspan="2" style="font-size:11px;font-weight:700;color:var(--text3);padding-bottom:4px">── 每 人 費 用 ──</td></tr>
+    <tr><td>✈️ 機票去程（1,660+750+610）</td><td>TWD 3,020</td></tr>
+    <tr><td>✈️ 機票回程（2,570+854+385+278+610）</td><td>TWD 4,697</td></tr>
+    <tr><td style="font-weight:700">機票小計 / 人</td><td style="font-weight:700">TWD 7,717</td></tr>
+    <tr><td>🚄 高鐵往返（HKD 247 × 2 程）</td><td>≈ TWD 2,130</td></tr>
+    <tr><td>🚆 機場快線往返（HKD 115 × 2 程）</td><td>≈ TWD 1,000</td></tr>
+    <tr><td>🏨 住宿 4晚（CNY 500/晚 ÷ 3人）</td><td>≈ TWD 2,900</td></tr>
+    <tr><td>🍽️ 餐飲 4天（CNY ~100/天）</td><td>≈ TWD 1,730</td></tr>
+    <tr><td>🚕 滴滴 + 市內交通</td><td>≈ TWD 350</td></tr>
+    <tr><td>🎫 設計周門票（CNY ~200）</td><td>≈ TWD 870</td></tr>
+    <tr><td>🛍 購物伴手禮</td><td>自行估算</td></tr>
+    <tr><td style="font-weight:800;font-size:15px;border-top:2px solid var(--border)">每人合計（不含購物）</td><td style="color:var(--orange);font-weight:800;font-size:16px;border-top:2px solid var(--border)">約 TWD 17,000</td></tr>
+    <tr><td colspan="2" style="font-size:11px;font-weight:700;color:var(--text3);padding:12px 4px 4px">── 3 人 合 計（× 3）──</td></tr>
+    <tr><td>✈️ 機票 3人含稅（實際票面）</td><td><strong>TWD 23,151</strong></td></tr>
+    <tr><td class="cost-sub">－ 去程 TWD 9,060 ｜ 回程 TWD 14,091</td><td class="cost-sub"></td></tr>
+    <tr><td>其餘費用 × 3（TWD 8,980 × 3）</td><td>≈ TWD 26,940</td></tr>
+    <tr><td style="font-size:16px;font-weight:800">3人合計（不含購物）</td><td style="color:var(--orange);font-size:17px;font-weight:800">約 TWD 50,000</td></tr>
+  </table>
+</div>
+
+<div class="sh">🛂 重要入境規定 · 大陸特別注意</div>
+<div class="card" style="border-left:4px solid var(--red);padding:14px 18px">
+  <div style="font-size:12px;line-height:2">
+    <div style="font-weight:800;font-size:13px;margin-bottom:6px;color:var(--red-txt)">出入境必備文件</div>
+    <div>🇹🇼 <strong>香港出入境</strong>：台灣護照（免簽，可停留90天）</div>
+    <div>🇨🇳 <strong>大陸出入境</strong>：台胞證（台灣居民來往大陸通行證）必備，台灣護照<strong>單獨無效</strong></div>
+    <div>🚄 <strong>西九龍「一地兩檢」</strong>：站內完成 HK出境＋大陸入境，兩份證件都要帶</div>
+    <div>🚄 <strong>廣州東站</strong>：只辦大陸出境；香港入境在西九龍抵達後才辦</div>
+  </div>
+  <div style="font-size:12px;line-height:2;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
+    <div style="font-weight:800;font-size:13px;margin-bottom:6px">在大陸生活必知</div>
+    <div>💳 <strong>付款</strong>：支付寶 / 微信支付為主，外國信用卡基本無法使用；台灣信用卡可綁定支付寶或微信</div>
+    <div>🗺️ <strong>地圖導航</strong>：Google Maps 在大陸無法使用，請改用高德地圖（Amap）</div>
+    <div>📱 <strong>上網</strong>：Instagram / Google / FB 在大陸被封鎖；需提前安裝 VPN，或買香港 SIM 卡漫遊</div>
+    <div>🚕 <strong>滴滴打車</strong>：需綁大陸手機號；可用國際版 DiDi，建議出發前安裝設定好帳號</div>
+    <div>💰 <strong>現金申報</strong>：攜帶人民幣超過 CNY 20,000 或外幣超過等值 USD 5,000 須填申報單</div>
+    <div>🚫 <strong>禁止攜入大陸</strong>：新鮮水果蔬菜、豬肉及相關製品（含台灣豬肉加工品）、各類鮮肉</div>
+  </div>
+</div>
+
+<div class="sh">⚠️ 出發前注意事項</div>
+<div class="tips">
+  <div class="tips-t">必做清單（越早越好）</div>
+  <ul class="tips-l">
+    <li>立即訂飯店，設計周期間琶洲展館附近飯店供不應求，越晚越貴</li>
+    <li>在 12306.cn 或 Trip.com 購買高鐵票，建議提前 30 天，設計展期間高鐵票非常緊俏</li>
+    <li>關注廣州設計周官方微信號「廣州設計周」或官網，等待購票通道開放</li>
+    <li>申辦台灣居民來往大陸通行證（台胞證），或確認護照效期足夠，高鐵過關需台灣護照或台胞證</li>
+    <li>安裝支付寶或微信支付（綁定台灣信用卡/帳戶），大陸基本上是無現金社會</li>
+    <li>安裝高德地圖（代替 Google Maps），大陸境內 Google Maps 無法使用</li>
+    <li>安裝滴滴 App（可用國際版 DiDi），到廣州才能開始叫車，出發前設定好帳號</li>
+    <li>購買大陸電話卡或開通漫遊，建議在台灣先買「中國大陸流量卡」（CMHK / 鴻聯九五等）</li>
+  </ul>
+</div>
+
+<div style="margin-top:28px;text-align:center;font-size:11px;color:var(--text3)">資料供參考 · 票價與展覽安排以官方公告為準 · 廣州設計周 2026 · 12月4–8日</div>
+</div>
+
+<script>
+function showMeal(id) {
+  document.querySelectorAll('.rest-section').forEach(s => s.classList.remove('show'));
+  document.querySelectorAll('.rest-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('show');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
