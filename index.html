@@ -129,6 +129,16 @@ body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;bac
 .tips-l li{font-size:12px;padding:3px 0;display:flex;gap:7px}
 .tips-l li::before{content:'⚠';flex-shrink:0;font-size:11px}
 .walk{display:inline-block;font-size:11px;font-weight:600;color:var(--green-txt);background:var(--green-bg);padding:1px 7px;border-radius:10px;margin-top:4px}
+.day-icon{width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;letter-spacing:0}
+.meal-day{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:12px;background:var(--blue-bg);color:var(--blue-txt);margin-bottom:6px}
+.night-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.night-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px}
+.night-emoji{font-size:30px;flex-shrink:0}
+.night-info{flex:1}
+.night-name{font-size:14px;font-weight:800;line-height:1.3}
+.night-dist{font-size:11px;font-weight:700;color:var(--blue);margin-top:2px}
+.night-desc{font-size:12px;color:var(--text2);line-height:1.6}
+.night-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
 @media(min-width:520px){
   .hall-grid{grid-template-columns:1fr 1fr 1fr}
   .hall-item:nth-child(2n){border-right:1px solid var(--border)}
@@ -306,7 +316,7 @@ body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;bac
 <div class="sh">📋 完整行程（含精確時間）</div>
 
 <div class="day">
-  <div class="day-h"><div class="day-num">Day 1</div><div class="day-title">出發日 · 台中→香港→廣州</div><div class="day-date">12/4（五）</div></div>
+  <div class="day-h"><div class="day-icon">1</div><div class="day-title">出發日 · 台中→香港→廣州</div><div class="day-date">12/4（五）</div></div>
   <div class="tl">
     <div class="ti"><div class="ti-time">11:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">前往台中國際機場（RMQ）</div><div class="ti-detail">建議提前 2 小時到機場，完成報到 / 托運行李 / 安檢<br>🚗 台中市區→機場約 20–40 分鐘（視出發地而定）</div></div></div>
     <div class="ti"><div class="ti-time">13:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">台中機場 Check-in 截止（UO173）</div><div class="ti-detail">香港快運通常截止登機前 60 分鐘關閉 Check-in 櫃台</div></div></div>
@@ -323,7 +333,7 @@ body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;bac
 </div>
 
 <div class="day">
-  <div class="day-h"><div class="day-num">Day 2</div><div class="day-title">設計周 · 保利館 A 全日攻略</div><div class="day-date">12/5（六）設計周首日</div></div>
+  <div class="day-h"><div class="day-icon">2</div><div class="day-title">設計周 · 保利館 A 全日攻略</div><div class="day-date">12/5（六）設計周首日</div></div>
   <div class="tl">
     <div class="ti"><div class="ti-time">08:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">早餐（詳見餐廳推薦 → 早餐）</div><div class="ti-detail">廣州早茶文化！找一家茶樓吃個悠閒早點，約 60–75 分鐘</div></div></div>
     <div class="ti"><div class="ti-time">09:15</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">步行至保利世貿博覽館</div><div class="ti-detail">從 Prime 琶洲公寓酒店步行約 5 分鐘；開館前 15 分鐘到場排隊</div><span class="walk">🚶 步行 5 分鐘</span></div></div>
@@ -337,7 +347,7 @@ body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;bac
 </div>
 
 <div class="day">
-  <div class="day-h"><div class="day-num">Day 3</div><div class="day-title">廣交會C區（國採館）＋ 海珠館</div><div class="day-date">12/6（日）</div></div>
+  <div class="day-h"><div class="day-icon">3</div><div class="day-title">廣交會C區（國採館）＋ 海珠館</div><div class="day-date">12/6（日）</div></div>
   <div class="tl">
     <div class="ti"><div class="ti-time">08:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">早餐</div><div class="ti-detail">換一家茶樓，試試廣式腸粉、馬拉糕、鮮蝦餃</div></div></div>
     <div class="ti"><div class="ti-time">09:20</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">步行至廣交會展館 C 區（國採館）</div><div class="ti-detail">從飯店步行，與保利館相鄰，約 8–12 分鐘</div><span class="walk">🚶 步行 8–12 分鐘</span></div></div>
@@ -352,7 +362,7 @@ body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;bac
 </div>
 
 <div class="day">
-  <div class="day-h"><div class="day-num">Day 4</div><div class="day-title">補看展 ＋ 廣州老城掃貨</div><div class="day-date">12/7（一）</div></div>
+  <div class="day-h"><div class="day-icon">4</div><div class="day-title">補看展 ＋ 廣州老城掃貨</div><div class="day-date">12/7（一）</div></div>
   <div class="tl">
     <div class="ti"><div class="ti-time">08:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">早餐</div></div></div>
     <div class="ti"><div class="ti-time">09:30</div><div class="ti-dot pu"></div><div class="ti-body"><div class="ti-label">📍 補看漏掉的展廳（三館任選）</div><div class="ti-detail">重點回看昨天沒拍夠的品牌展廳，或確認採購清單</div></div></div>
@@ -364,7 +374,7 @@ body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;bac
 </div>
 
 <div class="day">
-  <div class="day-h"><div class="day-num">Day 5</div><div class="day-title">設計周最後 ✈ 返回台中</div><div class="day-date">12/8（二）⚠️ 趕高鐵日</div></div>
+  <div class="day-h"><div class="day-icon">5</div><div class="day-title">設計周最後 ✈ 返回台中</div><div class="day-date">12/8（二）⚠️ 趕高鐵日</div></div>
   <div class="tl">
     <div class="ti"><div class="ti-time">08:00</div><div class="ti-dot gr"></div><div class="ti-body"><div class="ti-label">早餐（快速，建議 45 分鐘內完成）</div></div></div>
     <div class="ti"><div class="ti-time">09:00</div><div class="ti-dot"></div><div class="ti-body"><div class="ti-label">整理行李 ＋ 周邊散步購物</div><div class="ti-detail">完成最後行李整理，可到中洲中心商場或附近商鋪採購最後伴手禮<br>⚠️ 此票種不支援今日（12/8）入場展覽</div></div></div>
@@ -380,53 +390,272 @@ body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;bac
   </div>
 </div>
 
-<div class="sh">🍜 餐廳推薦（每餐 3 選）</div>
+<div class="sh">🍜 美食推薦</div>
 <div class="rest-tabs">
   <div class="rest-tab active" onclick="showMeal('breakfast')">🌅 早餐</div>
-  <div class="rest-tab" onclick="showMeal('lunch')">☀️ 午餐</div>
-  <div class="rest-tab" onclick="showMeal('d1dinner')">🌙 Day1晚餐</div>
-  <div class="rest-tab" onclick="showMeal('d2dinner')">🌙 Day2晚餐</div>
-  <div class="rest-tab" onclick="showMeal('d3dinner')">🌙 Day3晚餐</div>
-  <div class="rest-tab" onclick="showMeal('d4dinner')">🌙 最後晚餐</div>
+  <div class="rest-tab" onclick="showMeal('dimsum')">🍵 點心</div>
+  <div class="rest-tab" onclick="showMeal('bigmeal')">🍽️ 大餐</div>
+  <div class="rest-tab" onclick="showMeal('casual')">🥢 午晚餐</div>
+  <div class="rest-tab" onclick="showMeal('latenight')">🌙 宵夜</div>
 </div>
 
 <div id="breakfast" class="rest-section show">
   <div style="font-size:11px;color:var(--text2);margin-bottom:8px;padding:8px 12px;background:var(--surface2);border-radius:8px">📍 以下早餐均距 Prime 琶洲公寓酒店（新港東路1066號中洲中心南塔）計算距離，建議開啟大眾點評 / 美團確認最新營業時間</div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">點都德（新港東路附近分店）</div><div class="rest-rating">⭐ 4.5 / 5</div></div><div class="rest-info-row">📍 大眾點評搜尋「點都德 琶洲」選最近分店，步行 8–12 分鐘</div><div class="rest-info-row">📞 現場取號，不需預約</div><div class="rest-info-row">🕗 06:30–14:30 ｜ 人均 CNY 60–90（≈ TWD 258–387）</div><div class="rest-info-row">📝 廣州最知名連鎖茶樓，蝦餃皇水準穩定，不用訂位現場取號，展期人多建議 07:30 前到</div><div class="rest-dishes"><span class="dish-tag">蝦餃皇</span><span class="dish-tag">蘿蔔牛腩腸粉</span><span class="dish-tag">流沙包</span><span class="dish-tag">叉燒酥</span><span class="dish-tag">腸粉</span></div><div class="rest-didi">🚶 步行 8–12 分鐘</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">磨碟沙市場布拉腸粉（早市攤）</div><div class="rest-rating">⭐ 本地人愛店</div></div><div class="rest-info-row">📍 磨碟沙大街市場周邊，步行 10 分鐘</div><div class="rest-info-row">🕗 07:00–12:00（早市限定）｜ 人均 CNY 15–30（≈ TWD 65–130）</div><div class="rest-info-row">📝 現拉現蒸廣式布拉腸粉，米漿現磨，皮薄滑嫩，配甜豉油。早市攤位附近多家，可選評分最高者。是廣州最平價最接地氣的早餐。</div><div class="rest-dishes"><span class="dish-tag">鮮蝦腸粉</span><span class="dish-tag">牛肉腸粉</span><span class="dish-tag">叉燒腸粉</span><span class="dish-tag">齋腸</span></div><div class="rest-didi">🚶 步行 10 分鐘</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">林師傅布拉腸粉（海珠中路店）</div><div class="rest-rating">⭐ 4.3 / 5</div></div><div class="rest-info-row">📍 海珠中路，距琶洲滴滴約 15 分鐘</div><div class="rest-info-row">📞 大眾點評搜尋「林師傅布拉腸粉」</div><div class="rest-info-row">🕗 07:00–15:00 ｜ 人均 CNY 25–45（≈ TWD 108–194）</div><div class="rest-info-row">📝 廣州本地人愛的腸粉早餐，現做現吃，皮薄滑嫩，澆上特製醬汁。比磨碟沙稍遠但口碑更穩定。</div><div class="rest-dishes"><span class="dish-tag">鮮蝦腸粉</span><span class="dish-tag">牛肉腸粉</span><span class="dish-tag">雙拼腸粉</span></div><div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">艇仔粥攤（珠江琶醍江邊）</div><div class="rest-rating">⭐ 廣州特色</div></div><div class="rest-info-row">📍 磨碟沙大街118號珠江琶醍江邊一帶，步行 8–10 分鐘</div><div class="rest-info-row">🕗 07:30–11:00（早市供應）｜ 人均 CNY 25–45（≈ TWD 108–194）</div><div class="rest-info-row">📝 廣州傳統艇仔粥，豬皮、花生、魚片、熟豬肉現熬，配油條最廣州。珠江江邊早晨有粥攤供應，或搜尋「琶洲 艇仔粥」選有評價的店家</div><div class="rest-dishes"><span class="dish-tag">艇仔粥</span><span class="dish-tag">白粥 + 油條</span><span class="dish-tag">魚蛋粉</span></div><div class="rest-didi">🚶 步行 8–10 分鐘（往磨碟沙珠江邊方向）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">中洲中心 B1 / 附近快餐（備用）</div><div class="rest-rating">⭐ 快速方便</div></div><div class="rest-info-row">📍 中洲中心商場 B1 層（即飯店所在大樓），步行 0 分鐘</div><div class="rest-info-row">🕗 07:00–22:00 ｜ 人均 CNY 20–45（≈ TWD 86–194）</div><div class="rest-info-row">📝 展覽日趕時間時的快速選項。商場 B1 / 1F 有便利店（全家 / 7-Eleven）及簡餐店，沙縣小吃、蘭州拉麵等連鎖快餐通常也在附近，抓一頓就能出發。</div><div class="rest-dishes"><span class="dish-tag">包子 + 豆漿</span><span class="dish-tag">雞蛋餅</span><span class="dish-tag">便利店早餐</span></div><div class="rest-didi">🚶 步行 0 分鐘（大樓內）</div></div>
+  <div class="rest-card">
+    <div class="meal-day">🌅 每天皆可 · 展期首選</div>
+    <div class="rest-top"><div class="rest-name">點都德（新港東路附近分店）</div><div class="rest-rating">⭐ 4.5 / 5</div></div>
+    <div class="rest-info-row">📍 大眾點評搜尋「點都德 琶洲」選最近分店，步行 8–12 分鐘</div>
+    <div class="rest-info-row">🕗 06:30–14:30 ｜ 人均 CNY 60–90（≈ TWD 258–387）</div>
+    <div class="rest-info-row">📝 廣州最知名連鎖茶樓，蝦餃皇水準穩定，展期人多建議 07:30 前到現場取號</div>
+    <div class="rest-dishes"><span class="dish-tag">蝦餃皇</span><span class="dish-tag">蘿蔔牛腩腸粉</span><span class="dish-tag">流沙包</span><span class="dish-tag">叉燒酥</span></div>
+    <div class="rest-didi">🚶 步行 8–12 分鐘</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🌅 Day 2–3 推薦 · 最在地</div>
+    <div class="rest-top"><div class="rest-name">磨碟沙市場布拉腸粉（早市攤）</div><div class="rest-rating">⭐ 本地人愛店</div></div>
+    <div class="rest-info-row">📍 磨碟沙大街市場周邊，步行 10 分鐘</div>
+    <div class="rest-info-row">🕗 07:00–12:00（早市限定）｜ 人均 CNY 15–30（≈ TWD 65–130）</div>
+    <div class="rest-info-row">📝 現拉現蒸廣式布拉腸粉，皮薄滑嫩配甜豉油，廣州最平價接地氣早餐</div>
+    <div class="rest-dishes"><span class="dish-tag">鮮蝦腸粉</span><span class="dish-tag">牛肉腸粉</span><span class="dish-tag">叉燒腸粉</span><span class="dish-tag">齋腸</span></div>
+    <div class="rest-didi">🚶 步行 10 分鐘</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🌅 Day 3–4 推薦 · 稍遠口碑穩</div>
+    <div class="rest-top"><div class="rest-name">林師傅布拉腸粉（海珠中路店）</div><div class="rest-rating">⭐ 4.3 / 5</div></div>
+    <div class="rest-info-row">📍 海珠中路，距琶洲滴滴約 15 分鐘</div>
+    <div class="rest-info-row">🕗 07:00–15:00 ｜ 人均 CNY 25–45（≈ TWD 108–194）</div>
+    <div class="rest-info-row">📝 廣州本地人愛的腸粉早餐，皮薄滑嫩，澆上特製醬汁，比磨碟沙稍遠但口碑更穩定</div>
+    <div class="rest-dishes"><span class="dish-tag">鮮蝦腸粉</span><span class="dish-tag">牛肉腸粉</span><span class="dish-tag">雙拼腸粉</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🌅 Day 2 推薦 · 有閒情時</div>
+    <div class="rest-top"><div class="rest-name">艇仔粥攤（珠江琶醍江邊）</div><div class="rest-rating">⭐ 廣州特色</div></div>
+    <div class="rest-info-row">📍 磨碟沙大街118號珠江琶醍江邊一帶，步行 8–10 分鐘</div>
+    <div class="rest-info-row">🕗 07:30–11:00（早市供應）｜ 人均 CNY 25–45（≈ TWD 108–194）</div>
+    <div class="rest-info-row">📝 廣州傳統艇仔粥，豬皮花生魚片現熬，配油條最廣州。珠江江邊散步後吃一碗</div>
+    <div class="rest-dishes"><span class="dish-tag">艇仔粥</span><span class="dish-tag">白粥 + 油條</span><span class="dish-tag">魚蛋粉</span></div>
+    <div class="rest-didi">🚶 步行 8–10 分鐘（往磨碟沙珠江邊方向）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🌅 Day 5 趕車日 · 備用快速</div>
+    <div class="rest-top"><div class="rest-name">中洲中心 B1 / 附近快餐</div><div class="rest-rating">⭐ 快速方便</div></div>
+    <div class="rest-info-row">📍 中洲中心商場 B1 層（即飯店所在大樓），步行 0 分鐘</div>
+    <div class="rest-info-row">🕗 07:00–22:00 ｜ 人均 CNY 20–45（≈ TWD 86–194）</div>
+    <div class="rest-info-row">📝 展覽日趕時間備用，B1 有全家 / 7-Eleven 及簡餐店，抓一頓就能出發</div>
+    <div class="rest-dishes"><span class="dish-tag">包子 + 豆漿</span><span class="dish-tag">雞蛋餅</span><span class="dish-tag">便利店早餐</span></div>
+    <div class="rest-didi">🚶 步行 0 分鐘（大樓內）</div>
+  </div>
 </div>
 
-<div id="lunch" class="rest-section">
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">廣州大排檔 · 粵菜江景餐廳（琶醍店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div><div class="rest-info-row">📍 磨碟沙大街118號 珠江琶醍 C 區 4 樓</div><div class="rest-info-row">📞 020-89181788</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 70–120（≈ TWD 300–520）</div><div class="rest-info-row">📝 琶洲最知名江景餐廳，露台直望珠江，廣式粵菜水準穩定，大眾點評廣州菜熱門榜常客。建議 11:30 前到，否則排隊</div><div class="rest-dishes"><span class="dish-tag">白切雞</span><span class="dish-tag">清蒸魚</span><span class="dish-tag">廣式燒臘</span><span class="dish-tag">蒸蝦</span></div><div class="rest-didi">🚕 步行 8–10 分鐘（從保利館）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">傳記潮發牛肉店（琶洲保利店）</div><div class="rest-rating">⭐ 4.3 / 5</div></div><div class="rest-info-row">📍 新港東路琶洲新村暄悦西街 8 號（萬勝圍站 D 口步行 300m）</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div><div class="rest-info-row">📝 展館附近最近的優質餐廳之一，潮汕牛肉火鍋，肉新鮮、湯底濃鬱，受展商和設計師歡迎</div><div class="rest-dishes"><span class="dish-tag">吊龍肉片</span><span class="dish-tag">牛肉丸</span><span class="dish-tag">牛筋丸</span><span class="dish-tag">潮汕沙茶</span></div><div class="rest-didi">🚕 步行 5–8 分鐘（從保利館）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">躍 · Yue 現代粵菜料理</div><div class="rest-rating">⭐ 4.8 / 5</div></div><div class="rest-info-row">📍 新港東路618號 南豐滙 F4-F401（海珠館樓上）</div><div class="rest-info-row">🕗 11:30–14:30 / 17:30–22:00 ｜ 人均 CNY 150–250（≈ TWD 645–1,075）</div><div class="rest-info-row">📝 Trip.com 4.8/5，現代廣府菜創意出品，空間設計精緻，適合商務或犒賞自己。建議提前訂位。</div><div class="rest-dishes"><span class="dish-tag">創意粵式小炒</span><span class="dish-tag">煲湯</span><span class="dish-tag">精緻點心</span></div><div class="rest-didi">🚕 滴滴 CNY 12（從保利館，約 10 分鐘）</div></div>
+<div id="dimsum" class="rest-section">
+  <div style="font-size:11px;color:var(--text2);margin-bottom:8px;padding:8px 12px;background:var(--surface2);border-radius:8px">🍵 點心茶飲 — 適合早茶 / 下午茶時段（10:00–15:00）</div>
+  <div class="rest-card">
+    <div class="meal-day">🍵 早茶首選 · 連鎖穩定</div>
+    <div class="rest-top"><div class="rest-name">點都德（新港東路附近分店）</div><div class="rest-rating">⭐ 4.5 / 5</div></div>
+    <div class="rest-info-row">📍 大眾點評搜尋「點都德 琶洲」，步行 8–12 分鐘</div>
+    <div class="rest-info-row">🕗 06:30–14:30 ｜ 人均 CNY 60–90（≈ TWD 258–387）</div>
+    <div class="rest-info-row">📝 廣州連鎖茶樓代表，蝦餃皇水準穩定，全天候點心供應，也適合下午茶時段補一頓</div>
+    <div class="rest-dishes"><span class="dish-tag">蝦餃皇</span><span class="dish-tag">流沙包</span><span class="dish-tag">腸粉</span><span class="dish-tag">馬拉糕</span><span class="dish-tag">叉燒酥</span></div>
+    <div class="rest-didi">🚶 步行 8–12 分鐘</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🍵 老廣州情懷 · 訂位必備</div>
+    <div class="rest-top"><div class="rest-name">北園酒家（小北路店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦</div></div>
+    <div class="rest-info-row">📍 越秀區小北路202號</div>
+    <div class="rest-info-row">📞 020-83567688 ｜ 建議提前訂位</div>
+    <div class="rest-info-row">🕗 11:00–14:30 點心時段 ｜ 人均 CNY 102（≈ TWD 440）</div>
+    <div class="rest-info-row">📝 廣州最有歷史感的酒家之一，嶺南園林環境，傳統廣式點心精緻，蝦餃皇是招牌</div>
+    <div class="rest-dishes"><span class="dish-tag">蝦餃皇</span><span class="dish-tag">白雲豬手</span><span class="dish-tag">古法蒸魚</span><span class="dish-tag">廣式點心拼盤</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 25–35（約 25 分鐘）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🧋 午後甜品 · 逛展中場休息</div>
+    <div class="rest-top"><div class="rest-name">義統天下甜品 / 滿記甜品（附近分店）</div><div class="rest-rating">⭐ 連鎖品牌</div></div>
+    <div class="rest-info-row">📍 大眾點評搜尋「義統天下」或「滿記甜品 琶洲」選最近門店</div>
+    <div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 25–50（≈ TWD 108–215）</div>
+    <div class="rest-info-row">📝 廣式甜品代表：芒果西米露、楊枝甘露、龜苓膏，逛展兩個展館之間的午後甜品歇腳首選</div>
+    <div class="rest-dishes"><span class="dish-tag">楊枝甘露</span><span class="dish-tag">芒果西米露</span><span class="dish-tag">雙皮奶</span><span class="dish-tag">龜苓膏</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 15–20</div>
+  </div>
 </div>
 
-<div id="d1dinner" class="rest-section">
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">新興家喻 · 品廚（海珠琶洲店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div><div class="rest-info-row">📍 美居北街83號 國美家 4 層</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div><div class="rest-info-row">📝 五代傳承粵式羊肉煲，到廣州必試，包間帶露台，環境舒適。第一天晚上吃個熱騰騰的廣東羊肉煲，暖胃又有特色</div><div class="rest-dishes"><span class="dish-tag">廣式羊肉煲</span><span class="dish-tag">南乳炆羊</span><span class="dish-tag">白灼菜心</span></div><div class="rest-didi">🚕 步行 10 分鐘（從保利館飯店）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">廣州大排檔 · 粵菜江景餐廳（琶醍店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div><div class="rest-info-row">📍 磨碟沙大街118號 珠江琶醍 C 區 4 樓</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 70–120（≈ TWD 300–520）</div><div class="rest-info-row">📝 夜晚珠江江景更美，到廣州第一晚看江景吃粵菜，感受廣州氛圍。建議 19:00 前到位。</div><div class="rest-dishes"><span class="dish-tag">白切雞</span><span class="dish-tag">蒸活魚</span><span class="dish-tag">廣式燒味</span></div><div class="rest-didi">🚕 步行 8 分鐘或滴滴 CNY 12</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">祿粥（海珠店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 海珠區杏園大街（地鐵2號線江南西站 B 出口）</div><div class="rest-info-row">🕗 09:00–24:00（營業到深夜）｜ 人均 CNY 60–100（≈ TWD 258–430）</div><div class="rest-info-row">📝 因明星光顧在小紅書爆紅的廣式粥店，招牌生劏水蟹粥鮮甜無比，米芝蓮推薦。第一晚深夜宵夜也可考慮</div><div class="rest-dishes"><span class="dish-tag">生劏水蟹粥</span><span class="dish-tag">煲仔粥</span><span class="dish-tag">潮式滷水</span></div><div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div></div>
+<div id="bigmeal" class="rest-section">
+  <div style="font-size:11px;color:var(--text2);margin-bottom:8px;padding:8px 12px;background:var(--surface2);border-radius:8px">🍽️ 正式大餐 — 建議晚餐時段，部分需提前訂位</div>
+  <div class="rest-card">
+    <div class="meal-day">🍽️ Day 2 晚餐推薦 · 不接受預約</div>
+    <div class="rest-top"><div class="rest-name">惠食佳（濱江大公館店）</div><div class="rest-rating">⭐ 米芝蓮一星（連續6年）</div></div>
+    <div class="rest-info-row">📍 廣州市濱江西路172號（地鐵2號線鷺江站附近）</div>
+    <div class="rest-info-row">📞 020-34381188 ｜ 不接受預約，建議 18:00 前到場</div>
+    <div class="rest-info-row">🕗 11:00–22:30 ｜ 人均 CNY 100–160（≈ TWD 430–688）</div>
+    <div class="rest-info-row">📝 連續6年米芝蓮一星，以啫啫煲聞名廣州，平日兩點仍爆滿，建議第一個晚上就去</div>
+    <div class="rest-dishes"><span class="dish-tag">啫啫雞煲</span><span class="dish-tag">白灼蝦</span><span class="dish-tag">清蒸河鮮</span><span class="dish-tag">廣式小炒</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🍽️ Day 3–4 晚餐推薦 · 提前 1–2 天訂</div>
+    <div class="rest-top"><div class="rest-name">炳勝公館（珠江新城店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div>
+    <div class="rest-info-row">📍 天河區珠江新城冼村路2號5樓</div>
+    <div class="rest-info-row">📞 020-38035111 ｜ 建議提前 1–2 天訂位</div>
+    <div class="rest-info-row">🕗 17:30–22:00 ｜ 人均 CNY 150–250（≈ TWD 645–1,075）</div>
+    <div class="rest-info-row">📝 廣州知名燒味名店，脆皮燒鵝皮脆肉嫩，以廣式高端家宴著稱，收官晚餐首選</div>
+    <div class="rest-dishes"><span class="dish-tag">脆皮燒鵝</span><span class="dish-tag">叉燒拼盤</span><span class="dish-tag">煲湯</span><span class="dish-tag">蒸魚</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 20–30（約 20 分鐘）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🍽️ Day 2–3 晚餐 · 高 CP 老字號</div>
+    <div class="rest-top"><div class="rest-name">常來大排檔（老字號分店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦</div></div>
+    <div class="rest-info-row">📍 大眾點評搜尋「常來大排檔」選最近分店</div>
+    <div class="rest-info-row">🕗 11:00–22:30 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div>
+    <div class="rest-info-row">📝 20年老字號連續多年米芝蓮推薦，荔枝木燒鵝、鮑魚瑤柱煲仔飯著稱，CP值極高</div>
+    <div class="rest-dishes"><span class="dish-tag">荔枝木燒鵝</span><span class="dish-tag">叉燒</span><span class="dish-tag">鮑魚瑤柱煲仔飯</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 20–30</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🍽️ Day 4 晚餐 · 嶺南園林氛圍</div>
+    <div class="rest-top"><div class="rest-name">北園酒家（小北路店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦</div></div>
+    <div class="rest-info-row">📍 越秀區小北路202號</div>
+    <div class="rest-info-row">📞 020-83567688 ｜ 建議訂位</div>
+    <div class="rest-info-row">🕗 17:00–22:00 ｜ 人均 CNY 100（≈ TWD 430）</div>
+    <div class="rest-info-row">📝 廣州歷史最悠久酒家之一，嶺南園林環境夜景迷人，適合最後晚餐細品廣州滋味</div>
+    <div class="rest-dishes"><span class="dish-tag">蝦餃皇</span><span class="dish-tag">古法蒸魚</span><span class="dish-tag">白雲豬手</span><span class="dish-tag">廣式點心</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 25–35（約 25 分鐘）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🍽️ 任一晚 · 現代風格</div>
+    <div class="rest-top"><div class="rest-name">躍 · Yue 現代粵菜料理</div><div class="rest-rating">⭐ 4.8 / 5</div></div>
+    <div class="rest-info-row">📍 新港東路618號 南豐滙 F4-F401（海珠館樓上）</div>
+    <div class="rest-info-row">🕗 11:30–14:30 / 17:30–22:00 ｜ 人均 CNY 150–250（≈ TWD 645–1,075）</div>
+    <div class="rest-info-row">📝 Trip.com 4.8/5，現代廣府菜創意出品，空間設計精緻，適合商務或犒賞自己，建議提前訂位</div>
+    <div class="rest-dishes"><span class="dish-tag">創意粵式小炒</span><span class="dish-tag">煲湯</span><span class="dish-tag">精緻點心</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 12（從保利館，約 10 分鐘）</div>
+  </div>
 </div>
 
-<div id="d2dinner" class="rest-section">
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">惠食佳（濱江大公館店）</div><div class="rest-rating">⭐ 米芝蓮一星（連續6年）</div></div><div class="rest-info-row">📍 廣州市濱江西路172號（地鐵2號線鷺江站附近）</div><div class="rest-info-row">📞 020-34381188</div><div class="rest-info-row">🕗 11:00–16:00 / 17:00–22:30 ｜ 人均 CNY 100–160（≈ TWD 430–688）</div><div class="rest-info-row">📝 連續6年米芝蓮一星，以啫啫煲聞名廣州，不接受預約，建議 18:00 前到場取位，平日兩點仍爆滿</div><div class="rest-dishes"><span class="dish-tag">啫啫雞煲</span><span class="dish-tag">白灼蝦</span><span class="dish-tag">清蒸河鮮</span><span class="dish-tag">廣式小炒</span></div><div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">炳勝公館（珠江新城店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 天河區珠江新城冼村路2號5樓</div><div class="rest-info-row">📞 020-38035111</div><div class="rest-info-row">🕗 11:00–14:30 / 17:30–22:00 ｜ 人均 CNY 150–250（≈ TWD 645–1,075）</div><div class="rest-info-row">📝 廣州知名燒味名店，脆皮燒鵝皮脆肉嫩，以廣式高端家宴著稱，建議提前1–2天訂位</div><div class="rest-dishes"><span class="dish-tag">脆皮燒鵝</span><span class="dish-tag">叉燒拼盤</span><span class="dish-tag">煲湯</span><span class="dish-tag">蒸魚</span></div><div class="rest-didi">🚕 滴滴 CNY 20–30（約 20 分鐘）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">常來大排檔（老字號分店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦 · 大眾點評必吃榜</div></div><div class="rest-info-row">📍 大眾點評搜尋「常來大排檔」選最近分店</div><div class="rest-info-row">🕗 11:00–22:30 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div><div class="rest-info-row">📝 20年老字號，連續多年米芝蓮推薦，以荔枝木燒鵝、鮑魚瑤柱煲仔飯著稱，CP值極高的廣式大排檔</div><div class="rest-dishes"><span class="dish-tag">荔枝木燒鵝</span><span class="dish-tag">叉燒</span><span class="dish-tag">鮑魚瑤柱煲仔飯</span></div><div class="rest-didi">🚕 滴滴 CNY 20–30</div></div>
+<div id="casual" class="rest-section">
+  <div style="font-size:11px;color:var(--text2);margin-bottom:8px;padding:8px 12px;background:var(--surface2);border-radius:8px">🥢 隨興午晚餐 — 步行可達 / 展館附近，不需特別訂位</div>
+  <div class="rest-card">
+    <div class="meal-day">🥢 任一餐 · 步行可達江景</div>
+    <div class="rest-top"><div class="rest-name">廣州大排檔 · 粵菜江景餐廳（琶醍店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div>
+    <div class="rest-info-row">📍 磨碟沙大街118號 珠江琶醍 C 區 4 樓（步行 8 分鐘）</div>
+    <div class="rest-info-row">📞 020-89181788</div>
+    <div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 70–120（≈ TWD 300–520）</div>
+    <div class="rest-info-row">📝 琶洲最知名江景餐廳，露台直望珠江，廣式粵菜水準穩定，建議 11:30 / 19:00 前到位</div>
+    <div class="rest-dishes"><span class="dish-tag">白切雞</span><span class="dish-tag">清蒸魚</span><span class="dish-tag">廣式燒臘</span><span class="dish-tag">蒸蝦</span></div>
+    <div class="rest-didi">🚶 步行 8–10 分鐘（從保利館）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🥢 Day 2–3 午餐 · 展館旁快速</div>
+    <div class="rest-top"><div class="rest-name">傳記潮發牛肉店（琶洲保利店）</div><div class="rest-rating">⭐ 4.3 / 5</div></div>
+    <div class="rest-info-row">📍 新港東路琶洲新村暄悦西街 8 號（萬勝圍站 D 口步行 300m）</div>
+    <div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div>
+    <div class="rest-info-row">📝 展館附近優質潮汕牛肉火鍋，肉新鮮湯底濃鬱，受展商和設計師歡迎</div>
+    <div class="rest-dishes"><span class="dish-tag">吊龍肉片</span><span class="dish-tag">牛肉丸</span><span class="dish-tag">牛筋丸</span><span class="dish-tag">潮汕沙茶</span></div>
+    <div class="rest-didi">🚕 步行 5–8 分鐘（從保利館）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🥢 Day 1 晚餐 · 廣式暖胃</div>
+    <div class="rest-top"><div class="rest-name">新興家喻 · 品廚（海珠琶洲店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div>
+    <div class="rest-info-row">📍 美居北街83號 國美家 4 層</div>
+    <div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 80–130（≈ TWD 344–559）</div>
+    <div class="rest-info-row">📝 五代傳承粵式羊肉煲，到廣州必試，包間帶露台環境舒適，第一晚吃熱騰騰廣東羊肉煲</div>
+    <div class="rest-dishes"><span class="dish-tag">廣式羊肉煲</span><span class="dish-tag">南乳炆羊</span><span class="dish-tag">白灼菜心</span></div>
+    <div class="rest-didi">🚕 步行 10 分鐘（從保利館飯店）</div>
+  </div>
 </div>
 
-<div id="d3dinner" class="rest-section">
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">北園酒家（小北路店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 越秀區小北路202號</div><div class="rest-info-row">📞 020-83567688</div><div class="rest-info-row">🕗 11:00–14:30 / 17:00–22:00 ｜ 人均 CNY 102（≈ TWD 440）</div><div class="rest-info-row">📝 廣州歷史最悠久酒家之一，嶺南園林環境，傳統粵式點心與家宴菜式皆精緻，常見名人光顧，建議提前訂位</div><div class="rest-dishes"><span class="dish-tag">蝦餃皇</span><span class="dish-tag">古法蒸魚</span><span class="dish-tag">白雲豬手</span><span class="dish-tag">廣式點心</span></div><div class="rest-didi">🚕 滴滴 CNY 25–35（約 25 分鐘）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">祿粥（海珠店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 海珠區杏園大街（地鐵2號線江南西站 B 出口）</div><div class="rest-info-row">🕗 09:00–24:00 ｜ 人均 CNY 60–100（≈ TWD 258–430）</div><div class="rest-info-row">📝 下午在沙面玩完，晚上到海珠吃水蟹粥，路線自然。生劏水蟹極鮮，可提前電話查詢當日是否有蟹</div><div class="rest-dishes"><span class="dish-tag">生劏水蟹粥</span><span class="dish-tag">潮式雙拼</span><span class="dish-tag">宵夜小食</span></div><div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">惠食佳（東風大公館店）</div><div class="rest-rating">⭐ 米芝蓮一星</div></div><div class="rest-info-row">📍 越秀區東風東路（環市東）</div><div class="rest-info-row">📞 大眾點評搜尋「惠食佳東風大公館」</div><div class="rest-info-row">🕗 11:00–22:30 ｜ 人均 CNY 100–160（≈ TWD 430–688）</div><div class="rest-info-row">📝 惠食佳另一分店，不接受預約，與濱江大公館店同樣出品，環境更大</div><div class="rest-dishes"><span class="dish-tag">啫啫雞煲</span><span class="dish-tag">清炒時蔬</span><span class="dish-tag">廣式湯品</span></div><div class="rest-didi">🚕 滴滴 CNY 25–35</div></div>
+<div id="latenight" class="rest-section">
+  <div style="font-size:11px;color:var(--text2);margin-bottom:8px;padding:8px 12px;background:var(--surface2);border-radius:8px">🌙 宵夜 — 適合 21:00 以後，逛完夜景或喝完酒回來吃</div>
+  <div class="rest-card">
+    <div class="meal-day">🌙 任一夜 · 24小時營業</div>
+    <div class="rest-top"><div class="rest-name">祿粥（海珠店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div>
+    <div class="rest-info-row">📍 海珠區杏園大街（地鐵2號線江南西站 B 出口）</div>
+    <div class="rest-info-row">🕗 09:00–24:00（營業到深夜）｜ 人均 CNY 60–100（≈ TWD 258–430）</div>
+    <div class="rest-info-row">📝 因明星光顧在小紅書爆紅，招牌生劏水蟹粥鮮甜無比，米芝蓮推薦，宵夜必去</div>
+    <div class="rest-dishes"><span class="dish-tag">生劏水蟹粥</span><span class="dish-tag">煲仔粥</span><span class="dish-tag">潮式滷水</span></div>
+    <div class="rest-didi">🚕 滴滴 CNY 20–28（約 15 分鐘）</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🌙 Day 1–2 晚 · 步行可達</div>
+    <div class="rest-top"><div class="rest-name">廣州大排檔 · 夜市江景（琶醍店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div>
+    <div class="rest-info-row">📍 磨碟沙大街118號 珠江琶醍 C 區 4 樓，步行 8 分鐘</div>
+    <div class="rest-info-row">🕗 至 22:00 ｜ 人均 CNY 70–120（≈ TWD 300–520）</div>
+    <div class="rest-info-row">📝 夜晚珠江江景加持，氛圍極佳，逛完琶醍河畔後順路宵夜，22:00 前皆可入場</div>
+    <div class="rest-dishes"><span class="dish-tag">江景蒸魚</span><span class="dish-tag">白切雞</span><span class="dish-tag">廣式燒臘</span></div>
+    <div class="rest-didi">🚶 步行 8 分鐘</div>
+  </div>
+  <div class="rest-card">
+    <div class="meal-day">🌙 任一夜 · 路邊攤風情</div>
+    <div class="rest-top"><div class="rest-name">珠江琶醍夜市攤 / 路邊大排檔</div><div class="rest-rating">⭐ 廣州市井風情</div></div>
+    <div class="rest-info-row">📍 磨碟沙大街118號琶醍創意街區周邊，步行 5–8 分鐘</div>
+    <div class="rest-info-row">🕗 18:00–凌晨 ｜ 人均 CNY 30–60（≈ TWD 130–258）</div>
+    <div class="rest-info-row">📝 琶醍河畔夜市路邊攤，燒烤、炒粉麵、滷味、炸物一應俱全，配啤酒看江景，廣州夜晚最接地氣</div>
+    <div class="rest-dishes"><span class="dish-tag">炭燒生蠔</span><span class="dish-tag">炒河粉</span><span class="dish-tag">腸粉</span><span class="dish-tag">煮玉米</span></div>
+    <div class="rest-didi">🚶 步行 5–8 分鐘</div>
+  </div>
 </div>
 
-<div id="d4dinner" class="rest-section">
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">炳勝公館（珠江新城店）</div><div class="rest-rating">⭐ 4.5 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 天河區珠江新城冼村路2號5樓</div><div class="rest-info-row">📞 020-38035111 ｜ 建議提前 1–2 天訂位</div><div class="rest-info-row">🕗 17:30–22:00 ｜ 人均 CNY 150–250（≈ TWD 645–1,075）</div><div class="rest-info-row">📝 最後一頓，好好犒勞自己！廣州最著名燒味名廚，脆皮燒鵝皮脆肉嫩，米芝蓮水準不踩雷</div><div class="rest-dishes"><span class="dish-tag">脆皮燒鵝</span><span class="dish-tag">叉燒皇</span><span class="dish-tag">煲湯</span><span class="dish-tag">煎釀豆腐</span></div><div class="rest-didi">🚕 滴滴 CNY 20–30（約 20 分鐘）</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">廣州大排檔 · 粵菜江景餐廳（琶醍店）</div><div class="rest-rating">⭐ 4.4 / 5</div></div><div class="rest-info-row">📍 磨碟沙大街118號 珠江琶醍 C 區 4 樓</div><div class="rest-info-row">🕗 11:00–22:00 ｜ 人均 CNY 70–120（≈ TWD 300–520）</div><div class="rest-info-row">📝 最後晚餐回到琶洲，步行可達，江景配廣州菜，完美收尾。早點去佔江景位子</div><div class="rest-dishes"><span class="dish-tag">江景蒸魚</span><span class="dish-tag">白切雞</span><span class="dish-tag">廣式燒臘</span></div><div class="rest-didi">🚕 步行 8 分鐘</div></div>
-  <div class="rest-card"><div class="rest-top"><div class="rest-name">北園酒家（小北路店）</div><div class="rest-rating">⭐ 4.4 / 5 · 米芝蓮推薦</div></div><div class="rest-info-row">📍 越秀區小北路202號</div><div class="rest-info-row">📞 020-83567688 ｜ 建議訂位</div><div class="rest-info-row">🕗 17:00–22:00 ｜ 人均 CNY 100（≈ TWD 430）</div><div class="rest-info-row">📝 嶺南園林夜景，傳統粵菜精緻又有歷史感，適合最後晚餐細品廣州滋味</div><div class="rest-dishes"><span class="dish-tag">古法蒸魚</span><span class="dish-tag">蝦餃皇</span><span class="dish-tag">廣式點心拼盤</span></div><div class="rest-didi">🚕 滴滴 CNY 25–35（約 25 分鐘）</div></div>
+<div class="sh">🌃 夜晚去處（鬼混清單）</div>
+<div style="font-size:11px;color:var(--text2);margin-bottom:10px;padding:8px 12px;background:var(--surface2);border-radius:8px">以下地點均可滴滴打車前往，部分步行即達。建議 20:00 後出發，氣氛最佳。</div>
+
+<div class="night-card">
+  <div class="night-top">
+    <div class="night-emoji">🍺</div>
+    <div class="night-info">
+      <div class="night-name">珠江琶醍創意街區 ⭐ 步行可達！</div>
+      <div class="night-dist">🚶 步行 5–8 分鐘 · 飯店旁</div>
+    </div>
+  </div>
+  <div class="night-desc">廣州最知名的河畔創意街區，就在飯店旁邊。多家特色酒吧、cocktail 吧、江景餐廳、草坪音樂，河邊夜風超舒服。展覽人最愛的收工後聚集地，20:00 後氣氛最好。</div>
+  <div class="night-tags"><span class="dish-tag">露天酒吧</span><span class="dish-tag">江景</span><span class="dish-tag">精釀啤酒</span><span class="dish-tag">Cocktail</span><span class="dish-tag">草坪音樂</span></div>
+</div>
+
+<div class="night-card">
+  <div class="night-top">
+    <div class="night-emoji">🗼</div>
+    <div class="night-info">
+      <div class="night-name">廣州塔夜景（小蠻腰）</div>
+      <div class="night-dist">🚕 滴滴 CNY 15–22（約 15–20 分鐘）</div>
+    </div>
+  </div>
+  <div class="night-desc">廣州最標誌性夜景地標，廣場免費入場可拍照散步，或買票上觀景台（CNY 169）俯瞰全城。旁邊有海心橋步行橋走去對岸，夜晚燈光秀壯觀。</div>
+  <div class="night-tags"><span class="dish-tag">夜景地標</span><span class="dish-tag">觀景台 CNY 169</span><span class="dish-tag">廣場免費</span><span class="dish-tag">海心橋</span></div>
+</div>
+
+<div class="night-card">
+  <div class="night-top">
+    <div class="night-emoji">🚢</div>
+    <div class="night-info">
+      <div class="night-name">珠江夜遊</div>
+      <div class="night-dist">🚕 滴滴至天字碼頭 CNY 25–35（約 20 分鐘）</div>
+    </div>
+  </div>
+  <div class="night-desc">廣州著名觀光夜船，從天字碼頭或廣州大橋碼頭出發，遊覽珠江兩岸燈光秀，可看廣州塔、琶醍、海心橋，約 1.5–2 小時。CNY 50–100 / 人，提前網上購票。</div>
+  <div class="night-tags"><span class="dish-tag">珠江兩岸</span><span class="dish-tag">夜船 CNY 50–100</span><span class="dish-tag">廣州塔夜景</span><span class="dish-tag">約 2 小時</span></div>
+</div>
+
+<div class="night-card">
+  <div class="night-top">
+    <div class="night-emoji">🍸</div>
+    <div class="night-info">
+      <div class="night-name">恩寧路酒吧街</div>
+      <div class="night-dist">🚕 滴滴 CNY 25–35（約 25–30 分鐘）</div>
+    </div>
+  </div>
+  <div class="night-desc">廣州最文藝的老建築改造酒吧街，百年騎樓裡藏著精釀啤酒吧、特色 cocktail 吧與獨立咖啡館，適合喜歡文藝小酒館氛圍的夜晚。建議 Day 3–4 晚安排。</div>
+  <div class="night-tags"><span class="dish-tag">精釀啤酒</span><span class="dish-tag">Cocktail 吧</span><span class="dish-tag">騎樓建築</span><span class="dish-tag">文藝氛圍</span></div>
+</div>
+
+<div class="night-card">
+  <div class="night-top">
+    <div class="night-emoji">🌉</div>
+    <div class="night-info">
+      <div class="night-name">沙面島夜遊</div>
+      <div class="night-dist">🚕 滴滴 CNY 25–32（約 25 分鐘）· 可接 Day 3 下午</div>
+    </div>
+  </div>
+  <div class="night-desc">百年歐式建築群夜間燈光迷人，安靜的殖民地風格小島，適合散步拍照。建議 Day 3 下午遊沙面後留到入夜，附近有幾家小酒館可小酌收尾。</div>
+  <div class="night-tags"><span class="dish-tag">歐式建築夜景</span><span class="dish-tag">散步拍照</span><span class="dish-tag">安靜</span><span class="dish-tag">小酒館</span></div>
 </div>
 
 <div class="sh">🚄 高鐵班次參考 · 二等座</div>
